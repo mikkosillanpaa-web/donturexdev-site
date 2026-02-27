@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DontureX Development</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
     <meta name="theme-color" content="#0f172a">
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
             font-family: 'Inter', sans-serif;
             background: radial-gradient(circle at 20% 20%, #1e293b, #0f172a 60%);
             color: #f1f5f9;
             overflow-x: hidden;
         }
+
         body::before {
             content: "";
             position: fixed;
@@ -29,47 +34,57 @@
             animation: floatGlow 12s ease-in-out infinite alternate;
             z-index: -1;
         }
+
         @keyframes floatGlow {
             from { transform: translate(0,0) scale(1); }
             to { transform: translate(150px,100px) scale(1.2); }
         }
+
         header {
             text-align: center;
             padding: 5rem 1rem 3rem;
             animation: fadeIn 1.2s ease forwards;
         }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
         header img {
             width: 250px;
             margin-bottom: 1.5rem;
             transition: transform 0.4s ease;
         }
+
         header img:hover {
             transform: rotate(-5deg) scale(1.05);
         }
+
         h1 {
             font-family: 'Orbitron', sans-serif;
             font-size: 2.8rem;
             letter-spacing: 2px;
         }
+
         .tagline {
             margin-top: 0.8rem;
             font-size: 1.1rem;
             color: #cbd5e1;
         }
+
         .container {
             max-width: 1200px;
             margin: 3rem auto;
             padding: 0 1.5rem;
         }
+
         .games-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
         }
+
         .game-card {
             background: linear-gradient(145deg, #1e293b, #0f172a);
             border-radius: 24px;
@@ -82,6 +97,7 @@
             transform: translateY(30px);
             animation: cardFade 0.8s ease forwards;
         }
+
         .game-card:nth-child(1) { animation-delay: 0.2s; }
         .game-card:nth-child(2) { animation-delay: 0.4s; }
         .game-card:nth-child(3) { animation-delay: 0.6s; }
@@ -89,6 +105,7 @@
         @keyframes cardFade {
             to { opacity: 1; transform: translateY(0); }
         }
+
         .game-card::before {
             content: "";
             position: absolute;
@@ -97,23 +114,28 @@
             transform: translateX(-100%);
             transition: transform 0.6s ease;
         }
+
         .game-card:hover::before {
             transform: translateX(100%);
         }
+
         .game-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 60px rgba(0,0,0,0.8);
         }
+
         .game-card h2 {
             font-family: 'Orbitron', sans-serif;
             margin-bottom: 0.7rem;
             font-size: 1.6rem;
         }
+
         .game-card p {
             font-size: 0.95rem;
             color: #cbd5e1;
             margin-bottom: 1.5rem;
         }
+
         .game-links a {
             display: inline-block;
             margin-right: 1rem;
@@ -122,19 +144,22 @@
             color: #38bdf8;
             transition: opacity 0.2s ease;
         }
+
         .game-links a:hover {
             opacity: 0.7;
         }
+
         .play-badge {
             margin-top: 1rem;
             max-width: 180px;
             transition: transform 0.2s ease;
+            cursor: pointer;
         }
+
         .play-badge:hover {
             transform: scale(1.05);
         }
 
-        /* COMING SOON -tyyli */
         .coming-soon-label {
             display: inline-block;
             margin-bottom: 0.6rem;
@@ -146,6 +171,7 @@
             text-transform: uppercase;
             letter-spacing: 0.18em;
         }
+
         .coming-soon-label span {
             color: #fbbf24;
         }
@@ -157,29 +183,35 @@
             font-size: 0.9rem;
             color: #94a3b8;
         }
+
         .social-links a {
             margin: 0 0.6rem;
             color: #38bdf8;
             text-decoration: none;
             font-weight: 600;
         }
+
         .social-links a:hover {
             opacity: 0.7;
         }
+
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
+
 <header>
     <img src="images/donturex_logo.png" alt="DontureX Development Logo">
     <h1>DontureX Development</h1>
     <div class="tagline">Indie Android Game Development — Clean. Focused. Addictive.</div>
 </header>
+
 <div class="container">
     <div class="games-grid" id="gamesGrid"></div>
 </div>
+
 <footer>
     © 2026 DontureX Development. All rights reserved.
     <div class="social-links">
@@ -188,6 +220,7 @@
         <a href="mailto:support@donturexdev.fi">Contact</a>
     </div>
 </footer>
+
 <script>
     const games = [
         {
@@ -207,7 +240,7 @@
         {
             title: "PuzzLoop",
             description: "Daily brain puzzles set in a lush jungle world. Memory, logic and bottle-sorting mini games in one colorful package.",
-            url: null, // ei vielä omaa sivua / Play-linkkiä
+            url: "/puzzloop/index.html",
             badge: "puzzloop/images/puzzloop_icon.png",
             comingSoon: true
         }
@@ -215,12 +248,9 @@
 
     const grid = document.getElementById("gamesGrid");
 
-    games.forEach((game, index) => {
+    games.forEach((game) => {
         const card = document.createElement("div");
         card.className = "game-card";
-
-        const titleHtml = `<h2>${game.title}</h2>`;
-        const descHtml = `<p>${game.description}</p>`;
 
         let linksHtml = "";
         if (game.comingSoon) {
@@ -235,18 +265,29 @@
             `;
         }
 
-        const badgeHtml = `
-            <img class="play-badge" src="${game.badge}" alt="${game.title} logo">
-        `;
+        let badgeHtml = "";
+        if (game.url) {
+            badgeHtml = `
+                <a href="${game.url}">
+                    <img class="play-badge" src="${game.badge}" alt="${game.title} logo">
+                </a>
+            `;
+        } else {
+            badgeHtml = `
+                <img class="play-badge" src="${game.badge}" alt="${game.title} logo">
+            `;
+        }
 
         card.innerHTML = `
-            ${titleHtml}
-            ${descHtml}
+            <h2>${game.title}</h2>
+            <p>${game.description}</p>
             ${linksHtml}
             ${badgeHtml}
         `;
+
         grid.appendChild(card);
     });
 </script>
+
 </body>
 </html>

@@ -170,6 +170,13 @@
             color: #e5e7eb;
             text-transform: uppercase;
             letter-spacing: 0.18em;
+            text-decoration: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .coming-soon-label:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
         }
 
         .coming-soon-label span {
@@ -254,7 +261,9 @@
         let linksHtml = "";
         if (game.comingSoon) {
             linksHtml = `
-                <div class="coming-soon-label"><span>In testing</span></div>
+                <a href="${game.url}" class="coming-soon-label">
+                    <span>In testing</span>
+                </a>
             `;
         } else {
             linksHtml = `

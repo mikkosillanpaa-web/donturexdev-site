@@ -7,7 +7,7 @@
     <title>DontureX Development</title>
 
     <!-- Meta -->
-    <meta name="description" content="DontureX Development creates clean, focused, and addictive indie Android games and apps like Memory Trail, SCORE: 125, PuzzLoop and GymTracker.">
+    <meta name="description" content="DontureX Development creates clean, focused, and addictive indie Android games and apps like Memory Trail, SCORE: 125, PuzzLoop, GymTracker and Dashboard Camera.">
     <meta name="theme-color" content="#0f172a">
 
     <!-- Favicon -->
@@ -109,6 +109,7 @@
         .game-card:nth-child(2) { animation-delay: 0.4s; }
         .game-card:nth-child(3) { animation-delay: 0.6s; }
         .game-card:nth-child(4) { animation-delay: 0.8s; }
+        .game-card:nth-child(5) { animation-delay: 1.0s; }
 
         @keyframes cardFade {
             to { opacity: 1; transform: translateY(0); }
@@ -181,6 +182,7 @@
             text-decoration: none;
             transition: opacity 0.2s ease, transform 0.2s ease;
             cursor: pointer;
+            background: transparent;
         }
 
         .coming-soon-label:hover {
@@ -292,9 +294,8 @@
 <div class="popup-overlay" id="comingSoonPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
     <div class="popup-content">
         <div class="popup-title" id="popupTitle">Coming Soon</div>
-        <div class="popup-text">
-            GymTracker is currently in development.<br>
-            Stay tuned – more information will be available soon!
+        <div class="popup-text" id="popupText">
+            <!-- Täytetään JS:llä app-kohtaisella tekstillä -->
         </div>
         <button class="popup-button" id="popupCloseBtn">OK</button>
     </div>
@@ -329,18 +330,32 @@
         {
             title: "GymTracker",
             description: "Track your workouts, follow your progress and keep your training organized — a clean companion for your gym sessions.",
-            url: "",   // no real page yet
+            url: "",
             badge: "gymtracker/images/ic_GymApp.png",
             comingSoon: true,
-            comingSoonPopup: true    // clicking shows popup "Coming Soon!"
+            comingSoonPopup: true,   // clicking shows popup "Coming Soon!"
+            popupMessage: "GymTracker is currently in development.<br>Stay tuned – more information will be available soon!"
+        },
+        {
+            title: "Dashboard Camera",
+            description: "Record your drives, capture incidents and keep your journeys safely stored with an easy-to-use dashboard camera app.",
+            url: "",
+            badge: "dashboard_camera/images/ic_DashCam.png",
+            comingSoon: true,
+            comingSoonPopup: true,
+            popupMessage: "Dashboard Camera is currently in development.<br>Stay tuned – more information will be available soon!"
         }
     ];
 
     const grid = document.getElementById("gamesGrid");
     const popup = document.getElementById("comingSoonPopup");
     const popupCloseBtn = document.getElementById("popupCloseBtn");
+    const popupText = document.getElementById("popupText");
 
-    function openPopup() {
+    function openPopup(message) {
+        if (popupText) {
+            popupText.innerHTML = message;
+        }
         popup.style.display = "flex";
     }
 
@@ -382,12 +397,13 @@
                 `;
             }
 
-            // GymTracker: coming soon → open popup
+            // GymTracker, Dashboard Camera: coming soon → open popup
             if (game.comingSoon && game.comingSoonPopup) {
                 linksHtml = `
                     <button type="button"
                             class="coming-soon-label"
                             data-coming-soon="true"
+                            data-popup-message="${encodeURIComponent(game.popupMessage || '')}"
                             aria-label="${game.title} is coming soon">
                         <span>Coming soon</span>
                     </button>
@@ -405,14 +421,15 @@
 
             let badgeHtml = "";
 
-            // For GymTracker: clicking badge also opens popup
+            // GymTracker & Dashboard Camera: clicking badge also opens popup
             if (game.comingSoonPopup) {
                 badgeHtml = `
                     <img class="play-badge"
                          src="${game.badge}"
                          alt="${game.title} logo"
                          loading="lazy"
-                         data-coming-soon="true">
+                         data-coming-soon="true"
+                         data-popup-message="${encodeURIComponent(game.popupMessage || '')}">
                 `;
             } else if (game.url) {
                 badgeHtml = `
@@ -436,15 +453,14 @@
             grid.appendChild(card);
         });
 
-        // Delegate click events for all "coming soon" elements
+        // Delegate click events for all "coming soon" elements (GymTracker + Dashboard Camera)
         grid.addEventListener("click", (e) => {
-            const target = e.target;
-            const isComingSoon = target.matches("[data-coming-soon]") ||
-                target.closest("[data-coming-soon]");
-
-            if (isComingSoon) {
+            const target = e.target.closest("[data-coming-soon]");
+            if (target) {
                 e.preventDefault();
-                openPopup();
+                const encoded = target.getAttribute("data-popup-message") || "";
+                const message = decodeURIComponent(encoded) || "This app is coming soon. Stay tuned!";
+                openPopup(message);
             }
         });
     }

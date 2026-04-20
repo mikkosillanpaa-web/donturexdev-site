@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DontureX Development</title>
 
+    <!-- Meta -->
+    <meta name="description" content="DontureX Development creates clean, focused, and addictive indie Android games and apps like Memory Trail, SCORE: 125, PuzzLoop and GymTracker.">
+    <meta name="theme-color" content="#0f172a">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
-    <meta name="theme-color" content="#0f172a">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -101,6 +108,7 @@
         .game-card:nth-child(1) { animation-delay: 0.2s; }
         .game-card:nth-child(2) { animation-delay: 0.4s; }
         .game-card:nth-child(3) { animation-delay: 0.6s; }
+        .game-card:nth-child(4) { animation-delay: 0.8s; }
 
         @keyframes cardFade {
             to { opacity: 1; transform: translateY(0); }
@@ -172,6 +180,7 @@
             letter-spacing: 0.18em;
             text-decoration: none;
             transition: opacity 0.2s ease, transform 0.2s ease;
+            cursor: pointer;
         }
 
         .coming-soon-label:hover {
@@ -202,21 +211,73 @@
             opacity: 0.7;
         }
 
+        /* Popup overlay */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15,23,42,0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+        }
+
+        .popup-content {
+            background: linear-gradient(145deg, #1e293b, #020617);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            max-width: 360px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+            border: 1px solid rgba(148,163,184,0.4);
+        }
+
+        .popup-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .popup-text {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            margin-bottom: 1.8rem;
+        }
+
+        .popup-button {
+            padding: 0.6rem 1.6rem;
+            border-radius: 999px;
+            border: none;
+            background: #38bdf8;
+            color: #0f172a;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .popup-button:hover {
+            background: #0ea5e9;
+            transform: translateY(-1px);
+        }
+
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
-
 <header>
-    <img src="images/donturex_logo.png" alt="DontureX Development Logo">
+    <img src="images/donturex_logo.png" alt="DontureX Development - Indie Android game studio logo">
     <div class="tagline">Indie Android Game Development — Clean. Focused. Addictive.</div>
 </header>
 
-<div class="container">
-    <div class="games-grid" id="gamesGrid"></div>
-</div>
+<main>
+    <div class="container">
+        <div class="games-grid" id="gamesGrid"></div>
+    </div>
+</main>
 
 <footer>
     © 2026 DontureX Development. All rights reserved.
@@ -227,6 +288,18 @@
     </div>
 </footer>
 
+<!-- Popup for "Coming Soon" -->
+<div class="popup-overlay" id="comingSoonPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+    <div class="popup-content">
+        <div class="popup-title" id="popupTitle">Coming Soon</div>
+        <div class="popup-text">
+            GymTracker is currently in development.<br>
+            Stay tuned – more information will be available soon!
+        </div>
+        <button class="popup-button" id="popupCloseBtn">OK</button>
+    </div>
+</div>
+
 <script>
     const games = [
         {
@@ -234,68 +307,148 @@
             description: "Test your memory and focus in this minimalist and addictive Android game experience.",
             url: "/memorytrail/",
             badge: "memorytrail/images/logo.png",
-            comingSoon: false
+            comingSoon: false,
+            comingSoonPopup: false
         },
         {
             title: "SCORE: 125",
             description: "A universal scoreboard app for any game — fast, clean, fully offline.",
             url: "/score125/",
             badge: "score125/images/logo.png",
-            comingSoon: false
+            comingSoon: false,
+            comingSoonPopup: false
         },
         {
             title: "PuzzLoop",
             description: "Daily brain puzzles set in a lush jungle world. Memory, logic and bottle-sorting mini games in one colorful package.",
             url: "/puzzloop/index.html",
             badge: "puzzloop/images/puzzloop_icon.png",
-            comingSoon: true
+            comingSoon: true,
+            comingSoonPopup: false   // link goes to the page, label "In testing"
+        },
+        {
+            title: "GymTracker",
+            description: "Track your workouts, follow your progress and keep your training organized — a clean companion for your gym sessions.",
+            url: "",   // no real page yet
+            badge: "gymtracker/images/ic_GymApp.png",
+            comingSoon: true,
+            comingSoonPopup: true    // clicking shows popup "Coming Soon!"
         }
     ];
 
     const grid = document.getElementById("gamesGrid");
+    const popup = document.getElementById("comingSoonPopup");
+    const popupCloseBtn = document.getElementById("popupCloseBtn");
 
-    games.forEach((game) => {
-        const card = document.createElement("div");
-        card.className = "game-card";
+    function openPopup() {
+        popup.style.display = "flex";
+    }
 
-        let linksHtml = "";
-        if (game.comingSoon) {
-            linksHtml = `
-                <a href="${game.url}" class="coming-soon-label">
-                    <span>In testing</span>
-                </a>
+    function closePopup() {
+        popup.style.display = "none";
+    }
+
+    if (popupCloseBtn) {
+        popupCloseBtn.addEventListener("click", closePopup);
+    }
+
+    if (popup) {
+        popup.addEventListener("click", (e) => {
+            if (e.target === popup) {
+                closePopup();
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closePopup();
+            }
+        });
+    }
+
+    if (grid) {
+        games.forEach((game) => {
+            const card = document.createElement("div");
+            card.className = "game-card";
+
+            let linksHtml = "";
+
+            // PuzzLoop: in testing, goes to its URL
+            if (game.comingSoon && !game.comingSoonPopup) {
+                linksHtml = `
+                    <a href="${game.url}" class="coming-soon-label" aria-label="${game.title} is in testing">
+                        <span>In testing</span>
+                    </a>
+                `;
+            }
+
+            // GymTracker: coming soon → open popup
+            if (game.comingSoon && game.comingSoonPopup) {
+                linksHtml = `
+                    <button type="button"
+                            class="coming-soon-label"
+                            data-coming-soon="true"
+                            aria-label="${game.title} is coming soon">
+                        <span>Coming soon</span>
+                    </button>
+                `;
+            }
+
+            // Normal "Learn more" for non-comingSoon games
+            if (!game.comingSoon && game.url) {
+                linksHtml = `
+                    <div class="game-links">
+                        <a href="${game.url}" aria-label="Learn more about ${game.title}">Learn More →</a>
+                    </div>
+                `;
+            }
+
+            let badgeHtml = "";
+
+            // For GymTracker: clicking badge also opens popup
+            if (game.comingSoonPopup) {
+                badgeHtml = `
+                    <img class="play-badge"
+                         src="${game.badge}"
+                         alt="${game.title} logo"
+                         loading="lazy"
+                         data-coming-soon="true">
+                `;
+            } else if (game.url) {
+                badgeHtml = `
+                    <a href="${game.url}" aria-label="${game.title}">
+                        <img class="play-badge" src="${game.badge}" alt="${game.title} logo" loading="lazy">
+                    </a>
+                `;
+            } else {
+                badgeHtml = `
+                    <img class="play-badge" src="${game.badge}" alt="${game.title} logo" loading="lazy">
+                `;
+            }
+
+            card.innerHTML = `
+                <h2>${game.title}</h2>
+                <p>${game.description}</p>
+                ${linksHtml}
+                ${badgeHtml}
             `;
-        } else {
-            linksHtml = `
-                <div class="game-links">
-                    <a href="${game.url}">Learn More →</a>
-                </div>
-            `;
-        }
 
-        let badgeHtml = "";
-        if (game.url) {
-            badgeHtml = `
-                <a href="${game.url}">
-                    <img class="play-badge" src="${game.badge}" alt="${game.title} logo">
-                </a>
-            `;
-        } else {
-            badgeHtml = `
-                <img class="play-badge" src="${game.badge}" alt="${game.title} logo">
-            `;
-        }
+            grid.appendChild(card);
+        });
 
-        card.innerHTML = `
-            <h2>${game.title}</h2>
-            <p>${game.description}</p>
-            ${linksHtml}
-            ${badgeHtml}
-        `;
+        // Delegate click events for all "coming soon" elements
+        grid.addEventListener("click", (e) => {
+            const target = e.target;
+            const isComingSoon = target.matches("[data-coming-soon]") ||
+                target.closest("[data-coming-soon]");
 
-        grid.appendChild(card);
-    });
+            if (isComingSoon) {
+                e.preventDefault();
+                openPopup();
+            }
+        });
+    }
 </script>
-
 </body>
 </html>
+```

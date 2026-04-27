@@ -1,1 +1,1014 @@
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GymTracker – Smart workout logging & coach for Android</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="GymTracker helps you plan workouts, log sets and weights, and get smart coaching suggestions for progression, variation and deload on Android."
+    />
+    <style>
+      :root {
+        --bg: #050816;
+        --bg-soft: #0b1020;
+        --accent: #4fc3f7;
+        --accent-soft: rgba(79, 195, 247, 0.15);
+        --text: #f5f5f5;
+        --text-soft: #c7c7c7;
+        --danger: #ff5252;
+        --ok: #69f0ae;
+        --max-width: 980px;
+        --radius: 10px;
+        --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.45);
+        --shadow-pill: 0 8px 18px rgba(0, 0, 0, 0.35);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: linear-gradient(
+            rgba(3, 7, 18, 0.85),
+            rgba(3, 7, 18, 0.96)
+          ),
+          url("images/bg_gym.png") center top / cover fixed no-repeat;
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+        backdrop-filter: blur(16px);
+        background: linear-gradient(
+          to right,
+          rgba(5, 8, 22, 0.96),
+          rgba(5, 8, 22, 0.9)
+        );
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .nav {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0.8rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        font-size: 1rem;
+      }
+      .logo-img {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        overflow: hidden;
+        flex-shrink: 0;
+        box-shadow: 0 0 16px rgba(79, 195, 247, 0.7);
+      }
+      .logo-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        font-size: 0.92rem;
+        color: var(--text-soft);
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .nav-links a {
+        position: relative;
+        padding-bottom: 2px;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #4fc3f7, #00e5ff);
+        transition: width 0.18s ease-out;
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      .nav-links .cta {
+        background: linear-gradient(135deg, #4fc3f7, #00e5ff);
+        color: #020410;
+        padding: 0.45rem 0.95rem;
+        border-radius: 999px;
+        box-shadow: var(--shadow-pill);
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+      .nav-links .cta::after {
+        display: none;
+      }
+      .nav-links .cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 24px rgba(0, 229, 255, 0.36);
+      }
+      main {
+        flex: 1;
+      }
+      /* Hero */
+      .hero {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 2.5rem 1rem 2rem;
+        display: grid;
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+        gap: 2.5rem;
+        align-items: center;
+      }
+      .hero-left h1 {
+        font-size: clamp(2rem, 3.2vw, 2.6rem);
+        line-height: 1.15;
+        margin-bottom: 0.8rem;
+      }
+      .hero-subtitle {
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        letter-spacing: 0.2em;
+        margin-bottom: 0.5rem;
+      }
+      .hero-description {
+        color: var(--text-soft);
+        max-width: 540px;
+        font-size: 0.97rem;
+      }
+      .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 1.3rem 0 1.5rem;
+      }
+      .badge {
+        font-size: 0.78rem;
+        padding: 0.25rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text-soft);
+        background: radial-gradient(
+          circle at top left,
+          rgba(79, 195, 247, 0.18),
+          rgba(5, 8, 22, 0.9)
+        );
+      }
+      .badge strong {
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+        align-items: center;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #4fc3f7, #00e5ff);
+        color: #020410;
+        padding: 0.7rem 1.4rem;
+        border-radius: 999px;
+        border: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        box-shadow: var(--shadow-pill);
+        transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+      }
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 14px 32px rgba(0, 229, 255, 0.38);
+      }
+      .btn-ghost {
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 0.55rem 1.1rem;
+        font-size: 0.9rem;
+        color: var(--text-soft);
+        background: rgba(3, 7, 18, 0.75);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        cursor: pointer;
+        transition: border-color 0.15s ease-out, background 0.15s ease-out;
+      }
+      .btn-ghost:hover {
+        border-color: var(--accent);
+        background: rgba(3, 7, 18, 0.92);
+      }
+      .hero-right {
+        position: relative;
+      }
+      .phone-frame {
+        margin-left: auto;
+        width: min(320px, 100%);
+        aspect-ratio: 9 / 19;
+        border-radius: 34px;
+        padding: 10px;
+        background: radial-gradient(circle at top left, #4fc3f7, #111827);
+        box-shadow: 0 28px 60px rgba(0, 0, 0, 0.75);
+        position: relative;
+        overflow: hidden;
+      }
+      .phone-inner {
+        border-radius: 26px;
+        background: #000;
+        overflow: hidden;
+        height: 100%;
+        border: 2px solid #000;
+        position: relative;
+      }
+      .phone-status-dot {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 6px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.2);
+      }
+      .screenshot {
+        position: absolute;
+        inset: 18px 6px 6px;
+        border-radius: 18px;
+        overflow: hidden;
+      }
+      .screenshot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .phone-tag {
+        position: absolute;
+        bottom: -14px;
+        right: 8px;
+        font-size: 0.68rem;
+        padding: 0.25rem 0.55rem;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        color: #e5e7eb;
+        backdrop-filter: blur(12px);
+      }
+      /* Sections */
+      .section {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 1.5rem 1rem 0;
+      }
+      .section h2 {
+        font-size: 1.35rem;
+        margin-bottom: 0.4rem;
+      }
+      .section-intro {
+        color: var(--text-soft);
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+      }
+      /* Feature cards */
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .feature-card {
+        background: radial-gradient(
+          circle at top left,
+          rgba(79, 195, 247, 0.22),
+          rgba(15, 23, 42, 0.96)
+        );
+        border-radius: var(--radius);
+        padding: 0.9rem 0.95rem;
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        box-shadow: var(--shadow-soft);
+        font-size: 0.9rem;
+      }
+      .feature-card h3 {
+        font-size: 0.98rem;
+        margin-bottom: 0.35rem;
+      }
+      .feature-tag {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: #9ca3af;
+        margin-bottom: 0.3rem;
+      }
+      .feature-card ul {
+        padding-left: 1.1rem;
+        margin: 0.2rem 0 0;
+        color: var(--text-soft);
+      }
+      .feature-card li {
+        margin-bottom: 0.12rem;
+      }
+      /* Details / info */
+      .details-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        gap: 1.2rem;
+        margin-bottom: 2rem;
+      }
+      .details-card {
+        background: rgba(15, 23, 42, 0.93);
+        border-radius: var(--radius);
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        padding: 0.9rem 1rem;
+        font-size: 0.9rem;
+        box-shadow: var(--shadow-soft);
+      }
+      .details-card h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.4rem;
+      }
+      .details-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.45rem 1.5rem;
+        font-size: 0.86rem;
+        color: var(--text-soft);
+        margin-top: 0.2rem;
+      }
+      .details-list dt {
+        font-weight: 500;
+        color: #e5e7eb;
+      }
+      .details-list dd {
+        margin: 0;
+      }
+      .meta-pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: 0.5rem;
+      }
+      .meta-pill {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.55rem;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        color: #d1d5db;
+        background: rgba(15, 23, 42, 0.9);
+      }
+      .meta-pill.ok {
+        border-color: rgba(105, 240, 174, 0.9);
+        color: var(--ok);
+      }
+      .meta-pill.warn {
+        border-color: rgba(255, 82, 82, 0.85);
+        color: var(--danger);
+      }
+      /* FAQ / support */
+      .faq-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        gap: 1.2rem;
+        margin-bottom: 2rem;
+      }
+      .faq-item + .faq-item {
+        margin-top: 0.7rem;
+        padding-top: 0.65rem;
+        border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      }
+      .faq-item h3 {
+        font-size: 0.96rem;
+        margin-bottom: 0.15rem;
+      }
+      .faq-item p {
+        font-size: 0.88rem;
+        color: var(--text-soft);
+      }
+      .faq-item ul {
+        margin-top: 0.25rem;
+        padding-left: 1.1rem;
+        font-size: 0.88rem;
+        color: var(--text-soft);
+      }
+      .support-card {
+        background: radial-gradient(
+          circle at top,
+          rgba(79, 195, 247, 0.2),
+          rgba(15, 23, 42, 0.96)
+        );
+        border: 1px solid rgba(148, 163, 184, 0.55);
+        border-radius: var(--radius);
+        padding: 0.9rem 1rem;
+        box-shadow: var(--shadow-soft);
+        font-size: 0.88rem;
+      }
+      .support-card h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.35rem;
+      }
+      .support-list {
+        list-style: none;
+        margin-top: 0.2rem;
+      }
+      .support-list li + li {
+        margin-top: 0.4rem;
+      }
+      .support-label {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: #9ca3af;
+      }
+      .support-value a {
+        color: var(--accent);
+      }
+      /* Privacy */
+      .privacy-card {
+        background: rgba(15, 23, 42, 0.96);
+        border-radius: var(--radius);
+        border: 1px solid rgba(148, 163, 184, 0.45);
+        padding: 0.9rem 1rem;
+        font-size: 0.88rem;
+        box-shadow: var(--shadow-soft);
+        margin-bottom: 2.2rem;
+      }
+      .privacy-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 0.7rem;
+        font-size: 0.85rem;
+      }
+      .privacy-table th,
+      .privacy-table td {
+        padding: 0.4rem 0.35rem;
+        text-align: left;
+      }
+      .privacy-table th {
+        font-weight: 500;
+        color: #e5e7eb;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.6);
+      }
+      .privacy-table tr:nth-child(even) td {
+        background: rgba(15, 23, 42, 0.9);
+      }
+      .privacy-badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: 0.4rem;
+        margin-bottom: 0.2rem;
+      }
+      .privacy-note {
+        margin-top: 0.6rem;
+        color: var(--text-soft);
+      }
+      /* Footer */
+      footer {
+        border-top: 1px solid rgba(148, 163, 184, 0.25);
+        margin-top: 1.8rem;
+      }
+      .footer-inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0.8rem 1rem 1.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.8rem;
+        font-size: 0.8rem;
+        color: #9ca3af;
+      }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .footer-links a {
+        text-decoration: underline;
+        text-decoration-color: rgba(148, 163, 184, 0.7);
+      }
+      /* Responsive */
+      @media (max-width: 820px) {
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+          padding-top: 1.7rem;
+        }
+        .hero-right {
+          order: -1;
+        }
+        .phone-frame {
+          margin: 0 auto;
+        }
+      }
+      @media (max-width: 720px) {
+        header {
+          position: static;
+        }
+        .nav {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .nav-links {
+          justify-content: center;
+        }
+        .details-grid,
+        .faq-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+      @media (max-width: 480px) {
+        .hero-cta {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .btn-primary,
+        .btn-ghost {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <nav class="nav">
+          <div class="logo">
+            <div class="logo-img">
+              <!-- place GymTracker logo here -->
+              <img src="images/gymtracker_icon.png" alt="GymTracker logo" />
+            </div>
+            <span>GymTracker</span>
+          </div>
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#howto">How it works</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#support">Support</a>
+            <a
+              href="https://play.google.com/store/apps/details?id=fi.donturexdev.gymtracker"
+              target="_blank"
+              rel="noopener"
+              class="cta gp-link"
+            >
+              Get it on Google Play
+            </a>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <!-- Hero -->
+        <section class="hero">
+          <div class="hero-left">
+            <div class="hero-subtitle">Android strength training companion</div>
+            <h1>GymTracker – plan, log and progress your workouts smarter</h1>
+            <p class="hero-description">
+              GymTracker is a workout log for Android that helps you plan
+              training days, track sets and weights, and get smart coaching
+              suggestions when it might be time to increase, vary or deload.
+              Keep your program organised and your progression visible without
+              getting lost in spreadsheets.
+            </p>
+            <div class="hero-badges">
+              <div class="badge"><strong>Version:</strong> 1.0.0</div>
+              <div class="badge"><strong>Updated:</strong> Apr 27, 2026</div>
+              <div class="badge"><strong>Requires Android:</strong> 8.0 and up</div>
+              <div class="badge"><strong>Content rating:</strong> PEGI 3</div>
+            </div>
+            <div class="hero-cta">
+              <a
+                class="btn-primary gp-link"
+                href="https://play.google.com/store/apps/details?id=fi.donturexdev.gymtracker"
+                target="_blank"
+                rel="noopener"
+              >
+                Download on Google Play
+              </a>
+              <a class="btn-ghost" href="#about">Learn more</a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="phone-frame">
+              <div class="phone-inner">
+                <div class="phone-status-dot"></div>
+                <div class="screenshot">
+                  <!-- place a GymTracker screenshot here -->
+                  <img
+                    src="images/gymtracker_screenshot.jpg"
+                    alt="GymTracker workout screen screenshot"
+                  />
+                </div>
+              </div>
+              <div class="phone-tag">Android app • Workout logging & coach</div>
+            </div>
+          </div>
+        </section>
+        <!-- About / Features -->
+        <section id="about" class="section">
+          <h2>About GymTracker</h2>
+          <p class="section-intro">
+            GymTracker helps you plan your strength training, log what you do in
+            each session and stay on top of progression. You define your workout
+            days and exercise library, the app takes care of sets in the
+            session, rest timers and coach suggestions based on your recent
+            performance.
+          </p>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-tag">Program</div>
+              <h3>Workout days & exercise library</h3>
+              <ul>
+                <li>
+                  Create multiple workout days (e.g. Day 1: Upper, Day 2:
+                  Lower).
+                </li>
+                <li>
+                  Add exercises from your own library with muscle group, type,
+                  default sets, reps and weight.
+                </li>
+                <li>
+                  Reorder and edit movements per day without touching your
+                  history.
+                </li>
+                <li>
+                  Tap on an exercise name to open its long‑term progress view
+                  (estimated 1RM chart).
+                </li>
+              </ul>
+            </article>
+            <article class="feature-card">
+              <div class="feature-tag">During workout</div>
+              <h3>Warm-up, sets and rest timer</h3>
+              <ul>
+                <li>
+                  Optional general warm‑up card at the start of the session –
+                  choose activity and track time.
+                </li>
+                <li>
+                  Session screen shows all movements with planned sets and
+                  rep‑ranges.
+                </li>
+                <li>
+                  Tap a set to mark it done; long‑press to adjust planned weight
+                  and reps.
+                </li>
+                <li>
+                  Built‑in rest timer starts automatically after a working set,
+                  shows remaining time in the top bar and via a notification,
+                  with configurable vibration.
+                </li>
+              </ul>
+            </article>
+            <article class="feature-card">
+              <div class="feature-tag">Coach</div>
+              <h3>Progression, variation & deload</h3>
+              <ul>
+                <li>
+                  Progression coach suggests when to increase, maintain or
+                  decrease weight based on recent sessions.
+                </li>
+                <li>
+                  Variation suggestions when a lift stalls: slightly lighter
+                  weight and an extra set for 1–2 sessions.
+                </li>
+                <li>
+                  Deload detection at muscle‑group level when signs of fatigue
+                  accumulate – lighter weight and sometimes fewer sets without
+                  touching your base settings.
+                </li>
+                <li>
+                  Modes for both progression and deload: suggestions only or
+                  auto‑apply with an info dialog listing changes at session
+                  start.
+                </li>
+              </ul>
+            </article>
+          </div>
+          <div class="details-grid">
+            <article class="details-card">
+              <h3>Technical details</h3>
+              <dl class="details-list">
+                <div>
+                  <dt>Platform</dt>
+                  <dd>Android phones and tablets</dd>
+                </div>
+                <div>
+                  <dt>Requires Android</dt>
+                  <dd>8.0 and up</dd>
+                </div>
+                <div>
+                  <dt>Distribution</dt>
+                  <dd>Google Play Store</dd>
+                </div>
+                <div>
+                  <dt>In‑app purchases</dt>
+                  <dd>None planned in the base version</dd>
+                </div>
+                <div>
+                  <dt>Content rating</dt>
+                  <dd>PEGI 3</dd>
+                </div>
+              </dl>
+              <div class="meta-pill-row">
+                <span class="meta-pill ok">No account required</span>
+                <span class="meta-pill ok">No personal data needed to log workouts</span>
+              </div>
+            </article>
+            <article class="details-card">
+              <h3>About the developer</h3>
+              <p>
+                GymTracker is developed as a practical tool for lifters who want
+                clean, focused logging with some smart automation – without
+                locking you into a rigid template or online account.
+              </p>
+              <div class="meta-pill-row" style="margin-top: 0.6rem">
+                <span class="meta-pill">Solo developer</span>
+                <span class="meta-pill">Coach logic based on recent performance</span>
+              </div>
+            </article>
+          </div>
+        </section>
+        <!-- How it works -->
+        <section id="howto" class="section">
+          <h2>How GymTracker works</h2>
+          <p class="section-intro">
+            GymTracker is built around three main flows: planning your program,
+            logging sessions and reviewing your history with coach suggestions.
+          </p>
+          <div class="faq-grid">
+            <div>
+              <article class="faq-item">
+                <h3>1. Set up your program</h3>
+                <ul>
+                  <li>
+                    Open <strong>Settings → Workout days</strong> to define your
+                    training split (e.g. 3‑day push/pull/legs).
+                  </li>
+                  <li>
+                    Add exercises to each day from the
+                    <strong>Exercises</strong> library.
+                  </li>
+                  <li>
+                    Each exercise can have default sets, reps and starting
+                    weight; you can fine‑tune per session.
+                  </li>
+                </ul>
+              </article>
+              <article class="faq-item">
+                <h3>2. Log your workouts</h3>
+                <ul>
+                  <li>
+                    From the main Workout tab or a day detail screen, tap
+                    <strong>Start workout</strong>.
+                  </li>
+                  <li>
+                    Use the set chips to mark sets as done; GymTracker tracks
+                    reps and weight for each set.
+                  </li>
+                  <li>
+                    The rest timer and warm‑up entries are saved to the session
+                    note, visible later in the history.
+                  </li>
+                </ul>
+              </article>
+              <article class="faq-item">
+                <h3>3. Use history & coach</h3>
+                <ul>
+                  <li>
+                    The <strong>History</strong> tab shows all completed
+                    workouts with date and duration.
+                  </li>
+                  <li>
+                    Tapping a workout opens its details: per‑exercise set
+                    breakdown and warm‑up notes.
+                  </li>
+                  <li>
+                    The coach uses this history to build suggestions for future
+                    sessions: progression, variation or deload.
+                  </li>
+                </ul>
+              </article>
+            </div>
+            <aside class="support-card">
+              <h3>Coach modes & visibility</h3>
+              <p>
+                Coach settings are under <strong>Settings → Coach</strong>.
+                There you can:
+              </p>
+              <ul style="margin-top: 0.4rem; padding-left: 1.1rem">
+                <li>
+                  Enable/disable weight progression and choose between
+                  suggestions only or auto‑apply.
+                </li>
+                <li>
+                  Enable/disable deload suggestions and choose mode per
+                  preference.
+                </li>
+                <li>
+                  Reset coach intro/info dialogs if you previously selected
+                  "Don’t show again".
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </section>
+        <!-- Privacy -->
+        <section id="privacy" class="section">
+          <h2>Privacy</h2>
+          <p class="section-intro">
+            GymTracker is designed to respect your privacy. You can log and
+            review your training without creating an account or sending workout
+            data to a server.
+          </p>
+          <article class="privacy-card">
+            <h3>What the app does (and doesn’t) collect</h3>
+            <div class="privacy-badge-row">
+              <span class="meta-pill ok">No account required</span>
+              <span class="meta-pill ok">No workout data sent to a server</span>
+              <span class="meta-pill ok">All logs stored locally on device</span>
+            </div>
+            <table class="privacy-table" aria-label="Data usage">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Examples</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Local training data</td>
+                  <td>
+                    Workout days, exercises, completed sessions, sets (weight &
+                    reps), warm‑up notes, coach notes.
+                  </td>
+                  <td>
+                    Stored on your device to keep your training history and
+                    allow the coach to make suggestions.
+                  </td>
+                </tr>
+                <tr>
+                  <td>App settings</td>
+                  <td>
+                    Theme choice, warm‑up & rest timer settings, coach modes
+                    (progression/deload/auto‑apply).
+                  </td>
+                  <td>Stored locally so the app remembers your preferences.</td>
+                </tr>
+                <tr>
+                  <td>Crash & diagnostics (optional)</td>
+                  <td>
+                    If enabled by Google Play / your device: anonymous crash
+                    reports or basic usage data.
+                  </td>
+                  <td>Improving stability and fixing bugs over time.</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="privacy-note">
+              GymTracker does not request unnecessary permissions: only features
+              like vibration for rest timer or file access for backup/export use
+              the minimum required scopes.
+            </p>
+            <p class="privacy-note" style="margin-top: 0.5rem">
+              For full details about data collection, permissions, and any
+              third‑party services, please see the official listing on
+              <a
+                href="https://play.google.com/store/apps/details?id=fi.donturexdev.gymtracker"
+                target="_blank"
+                rel="noopener"
+                class="gp-link"
+              >
+                Google Play
+              </a>.
+            </p>
+          </article>
+        </section>
+        <!-- Support -->
+        <section id="support" class="section">
+          <h2>Support & contact</h2>
+          <p class="section-intro">
+            If you encounter issues, have questions about how the coach works or
+            want to suggest features, you can contact the developer directly.
+          </p>
+          <div class="faq-grid">
+            <div>
+              <article class="faq-item">
+                <h3>Is GymTracker free?</h3>
+                <p>
+                  The base version of GymTracker is free to download from the
+                  Google Play Store. Some future versions may offer optional
+                  paid features, but core workout logging and coach functionality
+                  are planned to stay available without a subscription.
+                </p>
+              </article>
+              <article class="faq-item">
+                <h3>Do I need an account or internet connection?</h3>
+                <p>
+                  No account is required to use GymTracker. All workout logs and
+                  settings are stored locally on your device. An internet
+                  connection is only needed to download the app, receive updates
+                  and to send anonymous crash reports if you have that enabled
+                  via Google Play.
+                </p>
+              </article>
+              <article class="faq-item">
+                <h3>Which devices are supported?</h3>
+                <p>
+                  GymTracker is designed for Android phones and tablets running
+                  Android 8.0 or newer. On the Play Store, you can see
+                  compatibility information for your own devices when you are
+                  logged in with your Google account.
+                </p>
+              </article>
+            </div>
+            <aside class="support-card">
+              <h3>Contact & feedback</h3>
+              <ul class="support-list">
+                <li>
+                  <div class="support-label">Support email</div>
+                  <div class="support-value">
+                    <a href="mailto:gymtracker@donturexdev.fi"
+                      >gymtracker@donturexdev.fi</a
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="support-label">Google Play page</div>
+                  <div class="support-value">
+                    <a
+                      href="https://play.google.com/store/apps/details?id=fi.donturexdev.gymtracker"
+                      target="_blank"
+                      rel="noopener"
+                      class="gp-link"
+                    >
+                      Open GymTracker in Google Play
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="support-label">Feature requests & bugs</div>
+                  <div class="support-value">
+                    You can send feature requests or bug reports via email or by
+                    leaving a rating and review on Google Play. Screenshots and
+                    short descriptions of what you were doing in the app are
+                    especially helpful.
+                  </div>
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="footer-inner">
+          <div>
+            © <span id="year"></span> GymTracker. All rights reserved.
+          </div>
+          <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#howto">How it works</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#support">Support</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      // Current year in footer
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>

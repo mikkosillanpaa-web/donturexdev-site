@@ -1,1 +1,85 @@
+### Privacy Policy for GymTracker
 
+**Effective Date:** April 29, 2026
+
+**1. Introduction**
+Welcome to GymTracker. This Privacy Policy explains how Donturex Development ("we," "us," or "our") handles information in connection with our mobile application, GymTracker (the "App").
+
+Your privacy is critically important to us. Our philosophy is to collect only the minimum information necessary for the App to function and to give you, the user, full control over your data.
+
+**Our Contact Information:**
+-   **Company:** Donturex Development
+-   **Email:** gymtracker@donturexdev.fi
+-   **Website:** www.donturexdev.fi
+
+**2. Our Commitment to Privacy: Offline-First Design**
+GymTracker is designed as an "offline-first" application. This means that all of your personal workout data is stored **locally on your device** and is not transmitted to our servers or any third-party servers. We do not have access to your personal workout logs.
+
+**3. What Information We Collect (and What We Don't)**
+
+**a) Information You Provide (Stored Locally)**
+The App stores data that you create and input. This includes:
+*   **Workout Plans:** Your custom-built training programs, including days and exercise selections.
+*   **Exercise Library:** Custom exercises you create, including names, muscle groups, and instructions.
+*   **Workout History (Sessions):** Detailed logs of your completed workouts, including dates, times, exercises performed, sets, repetitions (reps), and weights used.
+*   **Coach Actions:** A log of changes suggested or automatically applied by the in-app Coach feature.
+
+This data is essential for the App to provide its core functionality, such as displaying your history, calculating progress, and offering coaching suggestions. **This data resides only on your device.**
+
+**b) Information We Do NOT Collect**
+We are committed to your privacy and do **not** collect any Personally Identifiable Information (PII). This includes:
+*   Your name, email address, or phone number.
+*   Your age, gender, or physical address.
+*   Precise GPS location data.
+*   Contacts or other personal information from your device.
+
+**c) Anonymous Usage and Crash Data**
+To improve the App's stability and performance, we may collect anonymous, aggregated, non-personal data through standard platform services (like Google Play Console). This may include:
+*   **Crash Reports:** Information about crashes, including device type and operating system version, to help us diagnose and fix bugs.
+*   **Performance Metrics:** Aggregated data on app startup time or feature usage, without any link to an individual user.
+
+This data is fully anonymized and cannot be used to identify you.
+
+**4. How We Use Your Information**
+
+The information stored by the App is used exclusively for the following purposes:
+
+*   **To Provide App Functionality:** Your workout data is used to display your logs, track your progress, and power features like the history view and exercise statistics.
+*   **To Power the Coach Feature:** The "Coach" uses your local workout history to generate personalized suggestions for progression, deloads, and exercise variations. This analysis happens entirely on your device.
+*   **To Improve the App:** Anonymous crash reports and usage data help us identify and fix technical issues, ensuring the App remains reliable and efficient.
+
+**5. Data Storage, Security, and Sharing**
+
+**a) Data Storage**
+As stated, all your personal workout data is stored in a local database on your mobile device. You have full control over it.
+
+**b) Security**
+We take reasonable measures within the App's code to protect the local database. However, you are responsible for the overall security of your device (e.g., by using a screen lock and keeping your operating system updated).
+
+**c) Data Sharing & Backups**
+We do **not** sell, rent, or share your personal workout data with any third parties.
+
+The App includes **optional** backup and export features. When you choose to use these features:
+*   **Export/Backup:** You are creating a file (e.g., CSV or JSON) containing your data. This file is saved to a location you choose. You are responsible for the security and privacy of that exported file. The App does not automatically send this file anywhere.
+*   **Import:** You can restore your data from a previously created backup file. This process is also initiated entirely by you.
+
+**6. Your Rights and Data Control**
+
+Because your data is stored locally, you have direct and complete control.
+
+*   **Right to Access and Rectify:** You can view and edit all your workout data (plans, exercises, completed sets) directly within the App at any time.
+*   **Right to Erasure ("Right to be Forgotten"):** You can delete individual exercises, workout plans, or entire workout sessions from within the App. To delete all data, you can clear the App's data through your device's settings or simply uninstall the App.
+*   **Right to Data Portability:** The "Export Backup" feature serves as your right to data portability, allowing you to get a copy of your data in a machine-readable format.
+
+**7. Children's Privacy**
+The App is not intended for use by children under the age of 13 (or the equivalent minimum age in your jurisdiction). We do not knowingly collect any personal information from children.
+
+**8. Changes to This Privacy Policy**
+We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. If we make material changes, we will notify you, for example, by updating the effective date at the top of this policy. We encourage you to review this policy periodically.
+
+**9. Contact Us**
+If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:
+
+**Donturex Development**
+Email: gymtracker@donturexdev.fi
+Website: www.donturexdev.fi

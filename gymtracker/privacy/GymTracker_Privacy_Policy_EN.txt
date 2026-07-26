@@ -1,5 +1,5 @@
 Privacy Policy for GymTracker
-Effective Date: June 8, 2026
+Effective Date: July 26, 2026
 
 Introduction
 Welcome to GymTracker. This Privacy Policy explains how Donturex Development (“we,” “us,” or “our”) handles information in connection with our mobile application, GymTracker (the “App”).
@@ -13,14 +13,14 @@ Email: gymtracker@donturexdev.fi
 Website: https://www.donturexdev.fi
 
 Offline-first design
-GymTracker is designed as an offline-first application. Your personal workout data is stored locally on your device. We do not operate a server that receives or stores your workout plans, workout history, exercise logs, weights, repetitions, notes, or Coach-related workout analysis.
+GymTracker is designed as an offline-first application. Your personal workout data is stored locally on your device. We do not operate a server that receives or stores your workout plans, workout history, exercise logs, weights, repetitions, notes, Coach-related workout analysis, heart rate samples, or workout health summaries.
 
 This means that we do not have access to your personal workout logs or training history.
 
-Some optional platform services, such as Google Play services, crash reporting, advertising, billing, or consent management, may process certain technical, advertising, purchase, or diagnostic data as described in this Privacy Policy. These services do not receive your personal workout logs from us.
+Some optional platform services, such as Google Play services, advertising, billing, consent management, Wear OS platform services, or Health Connect, may process certain technical, advertising, purchase, permission, diagnostic, or health-related data as described in this Privacy Policy. These services do not receive your personal workout logs from us unless you explicitly enable or use a feature that transfers data to that platform, such as Health Connect export.
 
 Information stored locally on your device
-The App stores information that you create or input in order to provide its core functionality. This data is stored locally on your device.
+The App stores information that you create, input, or record in order to provide its core functionality. This data is stored locally on your device.
 
 This may include:
 
@@ -29,9 +29,11 @@ Custom exercises, including names, muscle groups, exercise types, and instructio
 Workout history, including completed sessions, dates, times, exercises performed, sets, repetitions, weights, completed status, and time-based set durations
 Workout day name snapshots, so that history can keep the original workout day name even if the program day is later deleted or replaced
 Coach actions, such as progression suggestions, deloads, exercise variation suggestions, or automatically applied Coach changes
-App settings, such as language, theme, rest timer settings, warmup settings, Coach settings, and onboarding or intro dialog preferences
-Optional backup data created by you through the App’s export feature
-This information is used by the App to show your workout plan, track your progress, display history, calculate statistics, and provide local Coach-like suggestions.
+App settings, such as language, theme, appearance mode, rest timer settings, warm-up settings, Coach settings, equipment preferences, Health Connect export settings, and onboarding or intro dialog preferences
+Wear OS workout control data while an active workout is in progress
+Workout health data recorded with a compatible Wear OS watch, such as heart rate samples, average heart rate, maximum heart rate, estimated active calories, and workout health summaries
+Optional backup data created manually or automatically to a file you choose
+This information is used by the App to show your workout plan, track your progress, display history, calculate statistics, provide local Coach-like suggestions, show workout summaries, and support optional Wear OS and Health Connect features.
 
 Information we do not directly collect
 We do not directly collect personal identifiers such as:
@@ -45,7 +47,7 @@ Precise GPS location data
 Your personal workout logs on our servers
 We do not sell, rent, or share your personal workout data.
 
-However, if you use features that rely on third-party platform services, such as advertising, Google Play Billing, app distribution, diagnostics, or consent management, those services may process certain technical, device, advertising, purchase, diagnostic, or consent-related data according to their own privacy policies and applicable law. More information is provided below.
+However, if you use features that rely on third-party platform services, such as advertising, Google Play Billing, app distribution, diagnostics, consent management, Health Connect, or Wear OS services, those services may process certain technical, device, advertising, purchase, diagnostic, consent-related, permission-related, or health-related data according to their own privacy policies and applicable law. More information is provided below.
 
 Anonymous diagnostics and performance data
 To improve the App’s stability and performance, we may receive anonymous or aggregated technical information through standard platform services such as Google Play Console.
@@ -63,7 +65,7 @@ This information helps us diagnose bugs, improve performance, and maintain the A
 Advertising and the ad-supported version
 The App may offer a free ad-supported version. If you choose to continue using the App with ads after any free trial period, the App may display advertisements provided by Google AdMob or other advertising partners.
 
-We do not share your personal workout plans, workout history, sets, repetitions, weights, notes, or Coach analysis with advertising partners.
+We do not share your personal workout plans, workout history, sets, repetitions, weights, notes, Coach analysis, heart rate samples, or workout health summaries with advertising partners.
 
 However, advertising partners may process certain information from your device in order to provide, measure, personalize, and improve ads. Depending on your device settings, consent choices, region, and applicable law, this may include:
 
@@ -76,23 +78,71 @@ Diagnostic information
 Consent status and privacy choices
 Where required by law, we will ask for your consent before showing personalized ads. You may be able to manage your ad preferences through your device settings, Google settings, or consent options shown in the App.
 
-If you do not want to use the ad-supported version, the App may offer an optional paid ad-free subscription.
+If you do not want to use the ad-supported version, the App may offer an optional paid Premium subscription.
 
-Purchases and subscriptions
-The App may offer an optional paid ad-free subscription. Purchases and subscriptions are processed by Google Play Billing.
+Premium, purchases, and subscriptions
+The App may offer an optional paid Premium subscription or lifetime Premium access. Premium may include features such as:
+
+No ads
+Wear OS workout companion
+Heart rate and estimated active calorie tracking with a compatible Wear OS watch
+Health Connect export
+Automatic backup
+Personalized cooldown guidance
+Other Premium features added over time
+Purchases and subscriptions are processed by Google Play Billing.
 
 We do not receive or store your full payment card details.
 
-The App may receive information from Google Play about your purchase or subscription status, such as whether you have an active ad-free entitlement. This is used only to enable or disable ads and related subscription functionality.
+The App may receive information from Google Play about your purchase or subscription status, such as whether you have an active Premium entitlement. This is used only to enable or disable Premium features, ads, and related subscription functionality.
 
 Google processes payment and account information according to its own privacy policy and terms.
+
+Wear OS companion and health tracking
+GymTracker may include a Wear OS companion app. The phone app remains the source of truth for the active workout, while the Wear OS app works as a workout companion.
+
+During an active workout, the Wear OS app may allow you to:
+
+View the active workout
+Mark sets as completed
+Edit weights
+Use rest timers
+Control warm-up tracking
+View workout health data
+With a compatible Wear OS watch and required permissions, the Wear OS app may use Android Health Services to record workout-related health data during an active workout. This may include:
+
+Heart rate
+Average heart rate
+Maximum heart rate
+Heart rate samples
+Estimated active calories
+Workout tracking duration
+This data is used to show live workout information on the watch, save workout health summaries in the phone app, show heart rate graphs, and optionally export compatible data to Health Connect if you enable that feature.
+
+Heart rate and calorie data may be incomplete or unavailable if the watch is not worn correctly, the sensor cannot read reliably, permissions are missing, or the device does not support the required data. Active calorie values are estimates. In strength training, energy expenditure estimates may be inaccurate.
+
+Health Connect export
+GymTracker may offer an optional Health Connect export feature as part of GymTracker Premium.
+
+If you enable Health Connect export and grant the required permissions, GymTracker may write compatible completed workout data to Health Connect. This may include:
+
+Completed workout sessions
+Heart rate samples
+Estimated active calories
+GymTracker currently uses Health Connect as an export destination. The current version does not read your Health Connect data back into GymTracker.
+
+Other apps connected to Health Connect may use or display the data exported by GymTracker depending on their own Health Connect support, permissions, privacy policies, and user interface. We cannot control how other apps display or interpret Health Connect data.
+
+You can manage Health Connect permissions in your device’s Health Connect settings. If you revoke permissions or disable Health Connect export in GymTracker, GymTracker will stop exporting new workout data to Health Connect.
 
 Optional backups and exports
 The App includes optional backup, export, and import features.
 
-When you choose to export or back up your data, the App creates a backup file, such as a JSON file, that may contain your workout plans, exercises, workout history, settings supported by the backup format, session data, and Coach action logs.
+When you choose to export or back up your data, the App creates a backup file, such as a JSON file, that may contain your workout plans, exercises, workout history, settings supported by the backup format, session data, Coach action logs, workout health summaries, and other supported App data.
 
-The backup file is saved to a location that you choose. The App does not automatically send this file to us or to any server operated by us.
+Backups may be created manually by you or automatically if you enable automatic backup. Automatic backup keeps one backup file selected by you up to date according to the selected backup settings.
+
+The backup file is saved to a location that you choose. This location may be local storage on your device or your own cloud storage location, such as Google Drive, if available through the Android file picker. The App does not automatically send this file to us or to any server operated by us.
 
 You are responsible for the security and privacy of exported backup files. If you store the file in cloud storage, send it to another person, or move it to another device, that storage provider or recipient may have access to the file depending on your actions and the service used.
 
@@ -107,19 +157,22 @@ To calculate workout statistics, progress, and history summaries
 To show exercise instructions and exercise details
 To power local Coach features, such as progression suggestions, deload suggestions, and exercise variation suggestions
 To support temporary workout adaptations, such as home or outdoor alternatives
-To manage App settings, language, theme, timers, warmups, and onboarding preferences
+To manage App settings, language, theme, timers, warm-ups, Health Connect export settings, and onboarding preferences
+To show Wear OS workout information during active workouts
+To store and display workout health summaries and heart rate graphs when recorded
+To export compatible completed workout data to Health Connect when enabled by you
 To create and restore backups when you choose to use backup features
 Anonymous diagnostics and performance data may be used to improve stability, fix bugs, and improve the App.
 
 Advertising-related data may be used by advertising partners to provide and measure ads, subject to your consent choices and applicable law.
 
-Purchase and subscription status may be used to provide ad-free access when applicable.
+Purchase and subscription status may be used to provide Premium access when applicable.
 
 Coach and training suggestions
 GymTracker may include Coach-like features that use your local workout history and exercise data to provide suggestions. These may include:
 
 Weight progression suggestions
-Set or volume progression suggestions
+Set or load progression suggestions
 Deload suggestions
 Exercise variation suggestions
 Workout-level adjustments
@@ -149,20 +202,24 @@ Using a screen lock or other device security features
 Keeping your operating system updated
 Protecting exported backup files
 Choosing secure storage locations for backups
+Managing Health Connect permissions
+Managing permissions granted to other apps connected to Health Connect
 If you uninstall the App or clear the App’s data through your device settings, locally stored App data may be deleted.
 
 Data sharing
 We do not sell, rent, or share your personal workout data with third parties.
 
-We do not upload your workout plans, workout history, exercise logs, weights, repetitions, or Coach analysis to our servers.
+We do not upload your workout plans, workout history, exercise logs, weights, repetitions, Coach analysis, heart rate samples, or workout health summaries to our servers.
 
-Third-party services may process certain technical, advertising, purchase, diagnostic, or consent-related data when those services are used. These services may include:
+Third-party services may process certain technical, advertising, purchase, diagnostic, consent-related, permission-related, or health-related data when those services are used. These services may include:
 
 Google Play Console / Google Play services, for app distribution, crash reports, diagnostics, and performance information
 Google Play Billing, for optional purchases or subscriptions
 Google AdMob, for ads in the ad-supported version of the App
 Google User Messaging Platform, for advertising consent management where required
-These services process data according to their own privacy policies and terms. We do not provide them with your personal workout logs.
+Google Health Connect, if you enable Health Connect export
+Wear OS and Android Health Services, if you use the Wear OS companion and workout health tracking
+These services process data according to their own privacy policies and terms. We do not provide advertising partners with your personal workout logs.
 
 Your rights and data control
 Because your personal workout data is stored locally on your device, you have direct control over it.
@@ -174,6 +231,9 @@ Edit workout plans, exercises, and certain workout data in the App
 Delete individual exercises, workout days, or workout sessions where supported
 Export your data using the App’s backup feature
 Import a previously created backup file
+Enable or disable Health Connect export
+Manage Health Connect permissions in your device settings
+Delete Health Connect data through Health Connect or other supported system settings
 Delete all local App data by clearing the App’s data through your device settings or uninstalling the App
 If you have questions about privacy or data handling, you can contact us using the contact information below.
 
@@ -182,9 +242,11 @@ Your personal workout data remains on your device until you delete it, clear the
 
 Exported backup files remain wherever you choose to store them until you delete them.
 
+Workout data exported to Health Connect remains in Health Connect according to Health Connect’s behavior and your Health Connect settings. You can manage or delete Health Connect data through Health Connect or supported system settings.
+
 Anonymous diagnostics and crash information may be retained by platform providers according to their own retention policies.
 
-Advertising, consent, and billing-related data may be retained by the relevant third-party service providers according to their own privacy policies and legal obligations.
+Advertising, consent, billing, and purchase-related data may be retained by the relevant third-party service providers according to their own privacy policies and legal obligations.
 
 Children’s privacy
 The App is not intended for children under the age of 13, or the equivalent minimum age in your jurisdiction.
@@ -192,9 +254,9 @@ The App is not intended for children under the age of 13, or the equivalent mini
 We do not knowingly collect personal information from children. If you believe that a child has provided information through the App in a way that concerns you, please contact us.
 
 International users
-The App may be used in different countries. Third-party services such as Google Play, Google AdMob, Google Play Billing, or Google User Messaging Platform may process data in accordance with their own international data transfer practices and privacy policies.
+The App may be used in different countries. Third-party services such as Google Play, Google AdMob, Google Play Billing, Google Health Connect, Android Health Services, or Google User Messaging Platform may process data in accordance with their own international data transfer practices and privacy policies.
 
-Your personal workout data remains locally stored on your device unless you choose to export, back up, transfer, or otherwise share it.
+Your personal workout data remains locally stored on your device unless you choose to export, back up, transfer, write it to Health Connect, or otherwise share it.
 
 Changes to this Privacy Policy
 We may update this Privacy Policy from time to time to reflect changes in the App, our practices, legal requirements, or third-party services used by the App.

@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>GymTracker – Smart gym workout tracking for Android</title>
+    <title>GymTracker – Smart gym workout tracking for Android and Wear OS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="GymTracker helps you create gym programs, track workouts, follow progress, use equipment-aware planning, read exercise instructions, adapt workouts for home or outdoor sessions, and train with Coach support on Android."
+      content="GymTracker helps you create gym programs, log workouts, follow progress, use Wear OS workout support, track heart rate, export to Health Connect, use Coach support and keep your workout data under your control."
     />
     <style>
       :root {
@@ -274,7 +274,7 @@
         background: radial-gradient(circle at top left, #4fc3f7, #111827);
         box-shadow: 0 28px 60px rgba(0, 0, 0, 0.75);
         position: relative;
-        overflow: hidden;
+        overflow: visible;
       }
 
       .phone-inner {
@@ -308,6 +308,50 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+
+      .watch-frame {
+        position: absolute;
+        left: -74px;
+        bottom: 46px;
+        width: 154px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        padding: 8px;
+        background: radial-gradient(circle at top left, #4fc3f7, #111827);
+        box-shadow: 0 22px 44px rgba(0, 0, 0, 0.75);
+        overflow: hidden;
+        z-index: 4;
+      }
+
+      .watch-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #000;
+        overflow: hidden;
+        border: 2px solid #020410;
+      }
+
+      .watch-inner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .watch-tag {
+        position: absolute;
+        left: -58px;
+        bottom: 24px;
+        font-size: 0.65rem;
+        padding: 0.22rem 0.5rem;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.92);
+        border: 1px solid rgba(148, 163, 184, 0.45);
+        color: #e5e7eb;
+        backdrop-filter: blur(12px);
+        white-space: nowrap;
+        z-index: 5;
       }
 
       .phone-tag {
@@ -603,6 +647,17 @@
         .phone-frame {
           margin: 0 auto;
         }
+
+        .watch-frame {
+          left: -26px;
+          bottom: 34px;
+          width: 128px;
+        }
+
+        .watch-tag {
+          left: -16px;
+          bottom: 14px;
+        }
       }
 
       @media (max-width: 720px) {
@@ -635,6 +690,16 @@
         .btn-ghost {
           width: 100%;
           justify-content: center;
+        }
+
+        .watch-frame {
+          left: -10px;
+          bottom: 30px;
+          width: 112px;
+        }
+
+        .watch-tag {
+          display: none;
         }
       }
     </style>
@@ -671,27 +736,23 @@
       <main>
         <section class="hero">
           <div class="hero-left">
-            <div class="hero-subtitle">Android gym training companion</div>
-
+            <div class="hero-subtitle">Android & Wear OS training companion</div>
             <h1>
               GymTracker – train smarter, track every set and see your progress
             </h1>
-
             <p class="hero-description">
-              GymTracker is a focused gym training app for Android. Create
-              workout programs, log every set, follow your progress in a visual
-              history dashboard, and use smart tools for progression, deloads,
-              exercise guidance, equipment preferences, timed sets, workout
-              summaries, reminders, and temporary home or outdoor workout
-              adaptations.
+              GymTracker is a focused gym training app for Android and Wear OS.
+              Create workout programs, log every set, follow your progress, use
+              Coach support, control workouts from your watch, track heart rate
+              during training and export compatible workout data to Health
+              Connect when enabled.
             </p>
 
             <div class="hero-badges">
               <div class="badge"><strong>Status:</strong> Available on Google Play</div>
-              <div class="badge"><strong>Trial:</strong> 30 days ad-free</div>
-              <div class="badge">
-                <strong>Requires Android:</strong> 8.0 and up
-              </div>
+              <div class="badge"><strong>Trial:</strong> 30 days Premium</div>
+              <div class="badge"><strong>Premium:</strong> Wear OS, Health Connect & backup</div>
+              <div class="badge"><strong>Requires Android:</strong> 8.0 and up</div>
               <div class="badge"><strong>Content rating:</strong> PEGI 3</div>
             </div>
 
@@ -704,7 +765,6 @@
               >
                 Get it on Google Play
               </a>
-
               <a class="btn-ghost" href="#about">Learn more</a>
             </div>
           </div>
@@ -716,11 +776,21 @@
                 <div class="screenshot">
                   <img
                     src="images/gymtracker_screenshot.jpg"
-                    alt="GymTracker workout screen screenshot"
+                    alt="GymTracker phone workout screen screenshot"
                   />
                 </div>
               </div>
 
+              <div class="watch-frame">
+                <div class="watch-inner">
+                  <img
+                    src="images/gymtracker_wearos_screenshot.jpg"
+                    alt="GymTracker Wear OS workout companion screenshot"
+                  />
+                </div>
+              </div>
+
+              <div class="watch-tag">Wear OS companion</div>
               <div class="phone-tag">
                 Android app • Workouts, progress & coaching
               </div>
@@ -730,13 +800,13 @@
 
         <section id="about" class="section">
           <h2>About GymTracker</h2>
-
           <p class="section-intro">
-            GymTracker helps you build a gym program, track your workouts,
-            follow progress and stay consistent. The app combines workout
-            logging, equipment-aware program creation, exercise instructions,
-            rest timers, timed sets, workout summaries, visual history and local
-            Coach logic for progression, deloads and exercise variation.
+            GymTracker helps you build a gym program, track workouts, follow
+            progress and stay consistent. The app combines workout logging,
+            equipment-aware program creation, exercise instructions, rest timers,
+            timed sets, workout summaries, visual history, Wear OS workout
+            control, optional heart rate tracking and local Coach logic for
+            progression, deloads and exercise variation.
           </p>
 
           <div class="feature-grid">
@@ -757,8 +827,8 @@
                   bodyweight movements.
                 </li>
                 <li>
-                  Improved push/pull balance, load management and smarter
-                  default rep ranges help create more practical programs.
+                  Smarter program generation helps create more practical
+                  training plans for your gym setup.
                 </li>
               </ul>
             </article>
@@ -786,11 +856,56 @@
             </article>
 
             <article class="feature-card">
+              <div class="feature-tag">Wear OS</div>
+              <h3>Workout companion on your watch</h3>
+              <ul>
+                <li>
+                  View the active workout and control sets from a Wear OS watch.
+                </li>
+                <li>
+                  Edit weights, run rest timers and control warm-ups during the
+                  workout.
+                </li>
+                <li>
+                  Track heart rate and estimated active calories with a
+                  compatible Wear OS watch.
+                </li>
+                <li>
+                  The phone remains the source of truth while the watch works as
+                  a convenient workout companion.
+                </li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-tag">Health</div>
+              <h3>Heart rate, summaries & Health Connect</h3>
+              <ul>
+                <li>
+                  Workout summaries can show average heart rate, max heart rate
+                  and estimated active calories.
+                </li>
+                <li>
+                  Workout details can show a heart rate graph when data is
+                  recorded.
+                </li>
+                <li>
+                  Export compatible completed workouts, heart rate samples and
+                  active calories to Health Connect when enabled.
+                </li>
+                <li>
+                  Other apps may show Health Connect data depending on their own
+                  support.
+                </li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
               <div class="feature-tag">Coach</div>
               <h3>Progression, deloads and exercise guidance</h3>
               <ul>
                 <li>
-                  Coach logic suggests progression, volume changes, deloads and
+                  Coach logic suggests progression, load changes, deloads and
                   exercise variations.
                 </li>
                 <li>
@@ -810,13 +925,13 @@
 
             <article class="feature-card">
               <div class="feature-tag">History</div>
-              <h3>Visual progress dashboard</h3>
+              <h3>Clear workout history</h3>
               <ul>
                 <li>Weekly overview with completed workouts.</li>
                 <li>Monthly calendar with visual workout markers.</li>
                 <li>
                   Workout summaries show sets, target completion, duration,
-                  volume and muscle group load.
+                  volume, muscle group load and available health data.
                 </li>
                 <li>Tap a calendar day to open workout details.</li>
               </ul>
@@ -826,31 +941,30 @@
           <div class="details-grid">
             <article class="details-card">
               <h3>Technical details</h3>
-
               <dl class="details-list">
                 <div>
                   <dt>Platform</dt>
-                  <dd>Android phones and tablets</dd>
+                  <dd>Android phones and Wear OS watches</dd>
                 </div>
-
                 <div>
-                  <dt>Requires Android</dt>
-                  <dd>8.0 and up</dd>
+                  <dt>Phone requirements</dt>
+                  <dd>Android 8.0 and up</dd>
                 </div>
-
+                <div>
+                  <dt>Wear OS</dt>
+                  <dd>Optional companion app for active workouts</dd>
+                </div>
                 <div>
                   <dt>Distribution</dt>
                   <dd>Google Play Store</dd>
                 </div>
-
                 <div>
                   <dt>Monetization</dt>
                   <dd>
-                    Free with ads after a 30-day ad-free trial. Optional
-                    Ad-Free subscription available.
+                    Free with ads after a 30-day Premium trial. Optional
+                    GymTracker Premium subscription available.
                   </dd>
                 </div>
-
                 <div>
                   <dt>Content rating</dt>
                   <dd>PEGI 3</dd>
@@ -861,23 +975,27 @@
                 <span class="meta-pill ok">No account required</span>
                 <span class="meta-pill ok">Local workout storage</span>
                 <span class="meta-pill ok">Backup & restore support</span>
-                <span class="meta-pill ok">Ad-Free option</span>
+                <span class="meta-pill ok">Wear OS support</span>
+                <span class="meta-pill ok">Health Connect export</span>
+                <span class="meta-pill ok">Premium option</span>
               </div>
             </article>
 
             <article class="details-card">
-              <h3>About the developer</h3>
-
+              <h3>GymTracker Premium</h3>
               <p>
-                GymTracker is developed as a practical tool for lifters who want
-                focused logging, smart workout structure and useful coaching
-                support without needing spreadsheets or a rigid online account.
+                GymTracker Premium includes no ads, Wear OS workout support,
+                heart rate and estimated active calorie tracking with a
+                compatible watch, Health Connect export, automatic backup and
+                personalized cooldown guidance.
               </p>
 
               <div class="meta-pill-row" style="margin-top: 0.6rem">
-                <span class="meta-pill">Solo developer</span>
-                <span class="meta-pill">Built for real gym training</span>
-                <span class="meta-pill">Offline-first design</span>
+                <span class="meta-pill">No ads</span>
+                <span class="meta-pill">Wear OS companion</span>
+                <span class="meta-pill">Health tracking</span>
+                <span class="meta-pill">Health Connect</span>
+                <span class="meta-pill">Automatic backup</span>
               </div>
             </article>
           </div>
@@ -885,11 +1003,11 @@
 
         <section id="howto" class="section">
           <h2>How GymTracker works</h2>
-
           <p class="section-intro">
-            GymTracker is built around three main flows: creating your program,
-            logging workouts and reviewing progress through history and Coach
-            feedback.
+            GymTracker is built around clear training flows: creating your
+            program, logging workouts, optionally using your watch during
+            training, and reviewing progress through summaries, history and
+            Coach feedback.
           </p>
 
           <div class="faq-grid">
@@ -933,13 +1051,34 @@
               </article>
 
               <article class="faq-item">
-                <h3>3. Review history & Coach feedback</h3>
+                <h3>3. Use Wear OS during training</h3>
+                <ul>
+                  <li>
+                    Start or continue the workout on your phone, then open
+                    GymTracker on your watch.
+                  </li>
+                  <li>
+                    Mark sets completed, edit weights, control warm-ups and use
+                    rest timers from the watch.
+                  </li>
+                  <li>
+                    With a compatible watch, GymTracker can record heart rate and
+                    estimated active calories during the workout.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="faq-item">
+                <h3>4. Review history & Coach feedback</h3>
                 <ul>
                   <li>
                     The History dashboard shows your training week, monthly
                     calendar, summaries and recent workouts.
                   </li>
-                  <li>Tap a workout to see exercise-level set details.</li>
+                  <li>
+                    Workout summaries and details can include health data and a
+                    heart rate graph when available.
+                  </li>
                   <li>
                     Coach logic uses recent performance to suggest progression,
                     deloads or exercise variations.
@@ -950,13 +1089,11 @@
 
             <aside class="support-card">
               <h3>Designed for gym training</h3>
-
               <p>
                 GymTracker is primarily a gym training app, but it also supports
                 temporary home or outdoor workout adaptations when you cannot get
                 to the gym.
               </p>
-
               <ul style="margin-top: 0.4rem; padding-left: 1.1rem">
                 <li>Track regular gym sessions.</li>
                 <li>Use equipment-aware program generation.</li>
@@ -969,19 +1106,19 @@
 
         <section id="privacy" class="section">
           <h2>Privacy</h2>
-
           <p class="section-intro">
             GymTracker is designed to respect your privacy. You can log and
             review your training without creating an account.
           </p>
 
           <article class="privacy-card">
-            <h3>What the app stores</h3>
+            <h3>What the app stores and uses</h3>
 
             <div class="privacy-badge-row">
               <span class="meta-pill ok">No account required</span>
               <span class="meta-pill ok">Workout data stored locally</span>
-              <span class="meta-pill ok">Manual backup & restore</span>
+              <span class="meta-pill ok">File-based backup</span>
+              <span class="meta-pill ok">Optional Health Connect export</span>
             </div>
 
             <table class="privacy-table" aria-label="Data usage">
@@ -1007,12 +1144,39 @@
                 </tr>
 
                 <tr>
+                  <td>Health-related workout data</td>
+                  <td>
+                    Heart rate samples, average heart rate, max heart rate,
+                    estimated active calories and workout health summaries.
+                  </td>
+                  <td>
+                    Stored locally when recorded with a compatible Wear OS watch
+                    and used for summaries, graphs and optional Health Connect
+                    export.
+                  </td>
+                </tr>
+
+                <tr>
                   <td>App settings</td>
                   <td>
                     Theme, language, rest timer, warm-up settings, training
-                    profile, reminder settings and Coach modes.
+                    profile, reminder settings, Health Connect export settings
+                    and Coach modes.
                   </td>
                   <td>Stored locally so the app remembers your preferences.</td>
+                </tr>
+
+                <tr>
+                  <td>Backups</td>
+                  <td>
+                    File-based backups may include workout plans, history,
+                    settings, Coach data and workout health summaries.
+                  </td>
+                  <td>
+                    Created manually or automatically to a file you choose. The
+                    file may be stored locally or in your own cloud storage
+                    location, such as Google Drive when available.
+                  </td>
                 </tr>
 
                 <tr>
@@ -1023,7 +1187,7 @@
                     consent-related data.
                   </td>
                   <td>
-                    Used for ads in the free version, Ad-Free subscriptions,
+                    Used for ads in the free version, Premium subscriptions,
                     promo entitlements and consent management.
                   </td>
                 </tr>
@@ -1041,11 +1205,18 @@
 
             <p class="privacy-note">
               GymTracker does not require an account to log workouts. Workout
-              data is stored locally on your device. Backup and restore are
-              file-based and controlled by the user.
+              data is stored locally on your device. GymTracker does not upload
+              your personal workout logs to its own servers.
             </p>
 
-            <p class="privacy-note" style="margin-top: 0.5rem">
+            <p class="privacy-note">
+              Health Connect export is optional. If enabled, GymTracker can
+              write compatible completed workout sessions, heart rate samples and
+              estimated active calories to Health Connect. Other apps may use or
+              display that data depending on their own Health Connect support.
+            </p>
+
+            <p class="privacy-note">
               Ads and purchases are handled through Google services. GymTracker
               does not share your personal workout logs with advertising
               partners.
@@ -1055,7 +1226,6 @@
 
         <section id="support" class="section">
           <h2>Support & contact</h2>
-
           <p class="section-intro">
             If you encounter issues, have questions about how the app works or
             want to suggest features, you can contact the developer directly.
@@ -1067,9 +1237,20 @@
                 <h3>Is GymTracker free?</h3>
                 <p>
                   GymTracker can be downloaded for free. The app includes a
-                  30-day ad-free trial. After the trial, you can continue using
-                  the free ad-supported version or choose an optional Ad-Free
-                  subscription.
+                  30-day Premium trial. After the trial, you can continue using
+                  the free ad-supported version or choose optional GymTracker
+                  Premium. Core workout tracking remains available in the free
+                  version.
+                </p>
+              </article>
+
+              <article class="faq-item">
+                <h3>What does Premium include?</h3>
+                <p>
+                  Premium includes no ads, Wear OS workout support, heart rate
+                  and estimated active calorie tracking with a compatible watch,
+                  Health Connect export, automatic backup and personalized
+                  cooldown guidance.
                 </p>
               </article>
 
@@ -1078,7 +1259,8 @@
                 <p>
                   No account is required to use GymTracker. Workout logs and
                   settings are stored locally on your device. Internet is mainly
-                  needed for updates, ads, Google Play Billing and related
+                  needed for updates, ads, Google Play Billing, Health Connect
+                  setup, backup locations such as cloud storage and related
                   Google Play services.
                 </p>
               </article>
@@ -1086,15 +1268,15 @@
               <article class="faq-item">
                 <h3>Which devices are supported?</h3>
                 <p>
-                  GymTracker is designed for Android phones and tablets running
-                  Android 8.0 or newer.
+                  GymTracker is designed for Android phones running Android 8.0
+                  or newer. The Wear OS companion is available for compatible
+                  Wear OS watches.
                 </p>
               </article>
             </div>
 
             <aside class="support-card">
               <h3>Contact & feedback</h3>
-
               <ul class="support-list">
                 <li>
                   <div class="support-label">Support email</div>

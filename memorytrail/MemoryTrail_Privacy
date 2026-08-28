@@ -1,0 +1,155 @@
+🇬🇧 English (en)
+Privacy Policy – MemoryTrail
+Last updated: January 18, 2026
+ Developer: Mikko Sillanpää
+This Privacy Policy describes how the mobile game MemoryTrail handles user data. The game is designed to be used without creating an account or providing personal information. The game contains advertisements unless the user purchases the separate “Remove ads” feature.
+1. Data Collected
+1.1 Personal Data
+MemoryTrail does not collect, store, or process personal data, such as:
+name
+email address
+phone number
+usernames or passwords
+precise location data (GPS, etc.)
+The game can be used entirely without logging in.
+1.2 In-Game Data (Local)
+The game stores some non-personal data locally on your device to enable gameplay:
+Settings: sound, haptics, language
+High scores: best scores per level (2×2, 3×3, 4×4), date and time
+Purchase status: whether “Remove ads” has been purchased
+These data are stored only locally on the device (e.g. in SharedPreferences) and are not transmitted to the developer or own servers.
+2. Ads and Third-Party Services
+2.1 Advertisements
+MemoryTrail may display ads to users who have not purchased “Remove ads”.
+2.2 Ad Networks
+The game may use ad networks such as:
+Google AdMob – https://policies.google.com/privacy
+Ad networks act as independent data controllers and may collect device information, anonymized usage statistics, and coarse location (country/region).
+2.3 “Remove ads”
+After purchasing “Remove ads”, the game aims not to load or display ads, although ad SDKs may still collect limited technical data.
+3. Children
+MemoryTrail does not knowingly collect personal data from children. No accounts or communication features are included.
+4. Analytics
+The game currently does not use analytics services.
+5. Permissions
+Vibration (android.permission.VIBRATE) – used only for in-game feedback.
+ The game does not request access to contacts, location, camera, microphone, or files.
+6. Data Retention
+Local data remains until the app is uninstalled or data is cleared. Third-party data retention follows ad network policies.
+7. Security
+The developer does not operate backend servers or intentionally transmit personal data.
+8. Policy Changes
+Updates will be published in the app store listing or in-game info view.
+9. Contact
+Developer: Mikko Sillanpää
+ Email: u5121426805@gmail.com
+ 
+ 
+ 
+ 
+Tietosuojakäytäntö – MemoryTrail
+Päivitetty: 18.1.2026
+ Kehittäjä: Mikko Sillanpää
+Tämä tietosuojakäytäntö kuvaa, miten mobiilipeli MemoryTrail käsittelee käyttäjien tietoja. Peli on suunniteltu siten, että sen käyttäminen on mahdollista ilman tilin luomista tai henkilökohtaisten tietojen syöttämistä. Peli sisältää mainoksia, ellei käyttäjä osta erillistä “Remove ads” ‑ominaisuutta.
+
+1. Kerättävät tiedot
+1.1 Henkilötiedot
+MemoryTrail ei kerää, tallenna eikä käsittele henkilötietoja, kuten:
+nimeä
+sähköpostiosoitetta
+puhelinnumeroa
+käyttäjätunnuksia tai salasanoja
+tarkkoja sijaintitietoja (GPS tms.)
+Peliä voi käyttää täysin ilman kirjautumista.
+1.2 Pelin sisäiset tiedot (paikalliset)
+Peli tallentaa laitteellesi joitakin ei‑henkilökohtaisia tietoja pelin toiminnan mahdollistamiseksi:
+Asetukset
+ääni päällä/pois
+haptinen palaute (värinä) päällä/pois
+pelin kielivalinta
+High score ‑tiedot
+parhaat tuloksesi eri tasoilla (2×2, 3×3, 4×4)
+tulokseen liittyvä päivämäärä ja kellonaika
+Ostoparametrit
+tieto siitä, onko “Remove ads” ‑ominaisuus ostettu (kyllä/ei)
+Nämä tiedot tallennetaan vain laitteen paikalliseen muistiin (esimerkiksi SharedPreferences‑tiedostoon). Niitä ei lähetetä kehittäjälle eikä muihin omiin palvelimiin.
+
+2. Mainokset ja kolmannen osapuolen palvelut
+2.1 Mainokset
+MemoryTrail voi näyttää mainoksia käyttäjille, jotka eivät ole ostaneet “Remove ads” ‑ominaisuutta. Mainokset voivat olla esimerkiksi:
+bannerimainoksia
+välimainoksia (interstitial)
+mahdollisesti palkittuja mainoksia (rewarded) tulevissa versioissa
+Mainoksia näytetään pelin sisällä vain mainosverkkojen kautta, eikä kehittäjä itse kohdenna mainoksia käyttäjälle.
+2.2 Käytetyt mainosverkot
+Peli voi käyttää yhtä tai useampaa mainosverkkoa, kuten esimerkiksi:
+Google AdMob
+ Privacy Policy: https://policies.google.com/privacy
+Mainosverkot ovat omia rekisterinpitäjiään ja käsittelevät tietoja omien tietosuojakäytäntöjensä mukaisesti. Ne voivat kerätä esimerkiksi:
+laite‑ ja tunnistetietoja (esim. mainos‑ID, käyttöjärjestelmäversio, kieli)
+anonymisoituja käyttötilastoja
+karkean sijaintiarvion (esim. maa/alue) palveluiden tarjoamiseksi ja väärinkäytösten estämiseksi
+Näitä tietoja käytetään yleisesti:
+mainosten näyttämiseen ja frekvenssin rajoittamiseen
+mainosten tehokkuuden mittaamiseen
+mahdollisesti personoitujen mainosten tarjoamiseen, jos alusta tai käyttäjä on sallinut tämän
+2.3 “Remove ads” ‑ominaisuus
+Peli voi sisältää in‑app ostoksen “Remove ads”, jolla mainosten näyttäminen poistetaan tulevissa pelisessioissa tällä laitteella.
+kun “Remove ads” on ostettu ja ostotieto onnistuneesti vahvistettu, peli pyrkii olemaan lataamatta ja näyttämättä mainoksia
+itse mainosverkkojen SDK voi kuitenkin olla yhä osa sovellusta ja saattaa kerätä rajattua teknistä dataa (esim. sovellusversio), vaikka mainoksia ei enää näytetä – tarkemmat tiedot löytyvät mainosverkon omasta tietosuojakäytännöstä
+
+3. Lapsiin liittyvät tiedot
+MemoryTrail ei tietoisesti kerää henkilötietoja myöskään alaikäisiltä käyttäjiltä. Peli ei vaadi tilin luomista, eikä siinä ole chat‑ tai viestintäominaisuuksia.
+Mikäli olet vanhempi tai huoltaja ja epäilet, että lapsesi on antanut pelin kautta henkilötietoja, ota yhteyttä kehittäjään (kohta 8), jotta mahdolliset tiedot voidaan poistaa.
+
+4. Analytiikka
+Peli ei tällä hetkellä käytä erillistä analytiikkapalvelua (kuten Firebase Analytics tai Google Analytics). Ainoa kolmannen osapuolen dataa käsittelevä osa ovat mainosverkot, jotka on kuvattu kohdassa 2.
+Mikäli tulevissa versioissa lisätään analytiikkaa (esim. pelin käytön tilastointiin), tästä kerrotaan erikseen ja tietosuojakäytäntöä päivitetään.
+
+5. Luvat ja käyttöoikeudet
+Peli käyttää seuraavaa käyttöoikeutta:
+Vibration / Haptics
+ android.permission.VIBRATE
+ Käytetään ainoastaan pelin sisäisiin lyhyisiin värinäpalautteisiin, kun pelaaja tekee siirron, onnistuu kierroksessa tai peli päättyy. Värinä ei liity sijaintiin tai muihin henkilötietoihin.
+Peli ei pyydä pääsyä:
+kontakteihin
+tarkkaan sijaintiin (GPS)
+kameraan
+mikrofoniin
+puhelinluetteloon tai viesteihin
+laitteen tiedostoihin tai valokuviin
+
+6. Tietojen säilytys ja poistaminen
+6.1 Paikalliset pelitiedot
+Paikalliset asetukset, high score ‑tiedot ja ostotiedot (esim. Remove ads ‑lipuke) säilytetään laitteellasi niin kauan kuin sovellus on asennettuna tai kunnes poistat ne itse.
+Voit tyhjentää pelin paikalliset tiedot:
+poistamalla sovelluksen laitteeltasi, tai
+tyhjentämällä sovelluksen datan laitteen asetuksista (esim. Android: Asetukset → Sovellukset → MemoryTrail → Tallennus → Tyhjennä data)
+Tämä poistaa myös:
+parhaat tulokset (high scoret)
+kieli‑ ja ääni‑/värinäasetukset
+tiedon “Remove ads” ‑ostosta (jolloin ostos voidaan palauttaa alustasi omien palautusmekanismien kautta)
+6.2 Kolmansien osapuolten keräämät tiedot
+Mainosverkkojen keräämiä tietoja säilytetään niiden omien käytäntöjen mukaisesti. Niiden säilytysaikoihin ja tietojen poistamiseen voit vaikuttaa:
+laitteen käyttöjärjestelmän yksityisyys‑ ja mainosasetuksilla (esim. Androidin “Reset advertising ID” / “Opt out of Ads Personalization”)
+ottamalla yhteyttä suoraan mainosverkon tarjoajaan (esim. Google) heidän tietosuojakäytäntönsä ohjeiden avulla.
+
+7. Tietoturva
+Kehittäjä pyrkii varmistamaan, että sovellus ei tahallisesti kerää tai jaa tietoja, joita ei ole tässä käytännössä kuvattu. Sovellus ei käytä omaa taustapalvelinta, eikä lähetä henkilötietoja internetin yli.
+Koska peli käyttää kolmannen osapuolen mainosverkkoja, ne voivat kuitenkin kerätä teknistä dataa omien palveluidensa tarjoamiseksi. Näiden palveluiden tietoturvaan sovelletaan kunkin palveluntarjoajan omia teknisiä ja organisatorisia suojatoimia.
+
+8. Muutokset tähän tietosuojakäytäntöön
+Tätä tietosuojakäytäntöä voidaan päivittää ajan myötä (esimerkiksi, jos peliin lisätään uusia ominaisuuksia, analytiikkaa tai uusia mainosverkkoja). Uusin versio julkaistaan:
+sovelluskaupan (esimerkiksi Google Play) “Privacy Policy” ‑linkissä, ja/tai
+pelin Info‑näkymässä
+Merkittävistä muutoksista ilmoitetaan selkeästi, ja tarvittaessa pyydetään käyttäjän suostumus, jos tietojen käsittelyn luonne muuttuu.
+
+9. Yhteystiedot
+Jos sinulla on kysyttävää tästä tietosuojakäytännöstä tai pelin tietojen käsittelystä, voit ottaa yhteyttä:
+Kehittäjä: Mikko Sillanpää
+ Sähköposti: u5121426805@gmail.com
+ 
+ 
+ 
+ 
+

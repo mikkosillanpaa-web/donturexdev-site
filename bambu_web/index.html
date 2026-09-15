@@ -23,6 +23,8 @@
   .brand { display: flex; align-items: center; gap: .6rem; }
   .logo { display: inline-flex; align-items: center; gap: .5rem; font-weight: 800; letter-spacing: .06em; font-size: 1.35rem; }
   .logo-badge { display: inline-flex; align-items: center; justify-content: center; background: #fff; color: var(--red); border-radius: 6px; padding: .15rem .55rem; font-weight: 800; letter-spacing: .08em; }
+  .logo-img { height: 44px; width: auto; max-height: 44px; object-fit: contain; display: block; border-radius: 6px; }
+  @media (max-width: 640px) { .logo-img { height: 36px; } }
   .brand small { display:block; font-size:.62rem; font-weight:500; opacity:.9; letter-spacing:.04em; }
   .nav { display: flex; gap: 1.2rem; font-size: .92rem; font-weight: 600; }
   .nav a:hover { opacity: .75; }
@@ -89,7 +91,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="#">
-        <span class="logo"><span class="logo-badge">BAMBU</span></span>
+        <span class="logo"><img class="logo-img" src="images/bambu_logo.png" alt="Bambu logo"></span>
         <small>Thairavintola · Hollola</small>
       </a>
       <nav class="nav">
@@ -117,7 +119,7 @@
       <h2>Buffetlounas – syö niin paljon kuin jaksat</h2>
       <div class="offer-grid">
         <ul class="info-list">
-          <li><b>Auki:</b> maanantaista perjantaihin klo 10:30–19:00</li>
+          <li><b>Auki:</b> maanantaista perjantaihin klo 10:30–15:00</li>
           <li><b>Hinta:</b> 11,00 € / hlö</li>
           <li><b>Sisältää:</b> runsaan buffettin, riisin ja juoman</li>
           <li><b>Tule mukaan:</b> myös take away -annoksia saatavilla</li>
@@ -125,7 +127,7 @@
         <div class="price-card">
           <div class="eur">11,00 €</div>
           <div class="lbl">Buffetlounas</div>
-          <div class="time">klo 10:30 – 19:00</div>
+          <div class="time">klo 10:30 – 15:00</div>
         </div>
       </div>
     </div>
@@ -328,7 +330,7 @@
           <div class="c-item"><span class="ic">✉️</span><div><b>Sähköposti</b><a href="mailto:bambufood.oy@gmail.com">bambufood.oy@gmail.com</a></div></div>
         </div>
         <div>
-          <div class="c-item"><span class="ic">🕐</span><div><b>Aukioloajat</b>Ma–Pe 10:30–19:00</div></div>
+          <div class="c-item"><span class="ic">🕐</span><div><b>Aukioloajat</b>Ma–Pe 10:30–15:00</div></div>
           <div class="c-item"><span class="ic">📘</span><div><b>Facebook</b><a href="https://www.facebook.com/share/1F4JopoMUQ/" target="_blank" rel="noopener">Thairavintola Bambu Hollola</a></div></div>
           <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Tiilikankaantie+1+Hollola" target="_blank" rel="noopener">→ Avaa kartalla</a>
         </div>
@@ -337,7 +339,7 @@
   </section>
 
   <footer>
-    © 2026 Donturex Development / Mikko Sillanpää (Vain testikäyttöön / Only for testing)</a>
+    © 2026 Thairavintola Bambu Hollola · Tiilikankaantie 1, Hollola · <a href="tel:+358406430911">040 6430911</a>
   </footer>
 
 <script>

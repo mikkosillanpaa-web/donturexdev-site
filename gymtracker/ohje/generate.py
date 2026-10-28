@@ -7,7 +7,7 @@ chapters = []
 def chapter(slug, title, intro, path, steps, features, shots=(), note=''):
     chapters.append(dict(slug=slug, title=title, intro=intro, path=path, steps=steps, features=features, shots=shots, note=note))
 
-chapter('aloittaminen', 'Ota hyvä alku',
+chapter('aloittaminen', 'Käyttöönotto',
  'GymTracker kulkee mukana suunnittelusta viimeiseen sarjaan. Aloita omasta tavoitteestasi ja tee sovelluksesta sinulle sopiva.',
  'Ensikäynnistys · myöhemmin <strong>⋮ → Asetukset</strong>',
  ['Valitse kieli ja tutustu aloitusohjeisiin.', 'Valitse tavoite, kokemustaso, treenirytmi, treeniympäristö ja välineet. Perustiedot, kuten ikäryhmä ja sukupuoli, ovat vapaaehtoisia.', 'Luo ohjelma tai palauta aiempi GymTracker-varmuuskopio. Tarkista sen jälkeen treenipäivät ja liikkeet.'],
@@ -16,7 +16,7 @@ chapter('aloittaminen', 'Ota hyvä alku',
   ('Kieli ja ensimmäiset käyttövinkit', '<p>Avaa <strong>Asetukset → lippukuvake</strong> ja valitse kieli. Jos sovellus pyytää käynnistämään itsensä uudelleen, tee se vaihdon viimeistelemiseksi.</p><p>Lyhyet käyttövinkit opastavat uusissa toiminnoissa. Treenissä saat opastuksen uudelleen valitsemalla <strong>⋮ → Näytä treenin käyttöopastus</strong>. Valmentajan asetusten valikossa voit palauttaa käyttövinkkejä sekä erillisiä Valmentajan tietoikkunoita.</p>')],
  [('11-asetukset', 'Asetuksista löydät treenaamisen, kellon ja sovelluksen omat valinnat.')])
 
-chapter('ohjelmat', 'Rakenna oma treenipolkusi',
+chapter('ohjelmat', 'Treeniohjelmat',
  'Voit antaa GymTrackerin muodostaa ohjelman tai rakentaa treenipäivät itse. Valmis ohjelma on aina muokattavissa.',
  '<strong>⋮ → Asetukset → Treenaaminen → Luo treeniohjelma</strong>',
  ['Valitse uuden ohjelman lähtökohta ja tavoitteet.', 'Määritä kokemus, treenien määrä ja kesto sekä ympäristö ja käytettävissä olevat välineet.', 'Tarkista esikatselu. Valitse tarjolla oleva tallennustapa ja vahvista vasta, kun kokonaisuus sopii sinulle.'],
@@ -27,7 +27,7 @@ chapter('ohjelmat', 'Rakenna oma treenipolkusi',
   ('Treenipäivän luominen ja muokkaaminen käsin', '<p>Avaa <strong>Asetukset → Treenaaminen → Treeniasetukset → Treenipäivät</strong>. Lisää päivä, nimeä se ja valitse liikkeet. Määritä sarjat, toisto- tai aikaväli ja tarvittaessa painot.</p><p>Avaa olemassa oleva päivä muokataksesi nimeä, liikkeitä tai niiden järjestystä. Voit lisätä ja poistaa liikkeitä, muuttaa tavoitteita sekä poistaa tarpeettoman treenipäivän. Tarkista poistovahvistus ennen hyväksymistä.</p>')],
  [('13-ohjelman-luonti', 'Uusi ohjelma voi lähteä nykyisestä rungosta tai kokonaan alusta.')])
 
-chapter('liikkeet', 'Tunne liikkeesi',
+chapter('liikkeet', 'Liikekirjasto',
  'Liikekirjasto yhdistää liikkeiden kuvat, ohjeet ja oletusasetukset. Omilla liikkeillä täydennät ohjelman juuri omalle salillesi.',
  '<strong>Asetukset → Treenaaminen → Treeniasetukset → Liikkeet</strong>',
  ['Hae liikettä nimellä ja rajaa tarvittaessa lihasryhmällä.', 'Avaa liikkeen tiedot tai muokkaus. Tarkista nimi, sarjat, tavoitteet ja painot.', 'Tallenna muutokset. Lisää oma liike, jos sopivaa ei löydy.'],
@@ -36,7 +36,7 @@ chapter('liikkeet', 'Tunne liikkeesi',
   ('Piilottaminen ja liikkeen kehitystiedot', '<p>Poista turha liike käytöstä sen muokkauksessa. Piilotus pitää kirjaston selkeänä ja säilyttää vanhat harjoitusmerkinnät ymmärrettävinä.</p><p>Liikkeen kehitysnäkymässä tarkastelet viimeisimpiä tuloksia ja painollisten liikkeiden arvioitua 1RM-kehitystä. Rajaa tarkastelu viimeisiin 7, 10 tai 15 treeniin tai koko historiaan tarjolla olevan valikon mukaan.</p>')],
  [('15-liikekirjasto', 'Hae liikettä ja avaa sen tiedot kirjastosta.')])
 
-chapter('treeni', 'Kirjaa sarja. Jatka eteenpäin.',
+chapter('treeni', 'Treenin kirjaaminen',
  'Treenissä yksi liikekortti pitää tärkeimmät asiat näkyvissä. Voit tehdä liikkeet myös itsellesi sopivassa järjestyksessä.',
  '<strong>Treeni → Aloita treeni</strong> tai avaa ohjelman treenipäivä',
  ['Tarkista liike, sarjat ja tavoite. Avaa tarvittaessa liikkeen ohje.', 'Napauta sarjaa kirjataksesi sen tehdyksi. Syötä paino, jos sovellus pyytää sitä.', 'Tarkista toteutuneet toistot. Siirry seuraavaan liikkeeseen ja lopuksi päätä treeni valikosta.'],
@@ -47,14 +47,14 @@ chapter('treeni', 'Kirjaa sarja. Jatka eteenpäin.',
   ('Treenin mittarien vaihtaminen', '<p>Napauta mittaria ja valitse, mitä haluat sen näyttävän. Käytettävissä voivat olla esimerkiksi kulunut aika, syke, keskisyke, aktiiviset kalorit ja askeleet. Muissa treeneissä mukana ovat myös matka, vauhti tai nopeus.</p><p>Valintasi muistetaan tuleviin treeneihin. Mittarivalikoima riippuu harjoituksesta, laitteista ja kertyneestä datasta. Viiva tai puuttuva mittari tarkoittaa, ettei tietoa ole saatavilla.</p>')],
  [('05-sarja-tehty', 'Tehty sarja erottuu värillä. Yläreunassa kulkee lepoajastin.'), ('04-painon-syotto', 'Painon syöttö onnistuu sovelluksen omalla numeronäppäimistöllä.')])
 
-chapter('lammittely', 'Lämmittele ja pidä palautukset',
+chapter('lammittely', 'Lämmittely ja lepoajastin',
  'Yleislämmittely valmistaa treeniin. Sarjojen välinen lepoajastin auttaa pitämään oman rytmin.',
  '<strong>Asetukset → Treenaaminen → Lämmittely ja lepo</strong> · treenissä kellokuvake',
  ['Ota käyttöön haluamasi yleislämmittely ja liikekohtaiset lämmittelysarjat.', 'Käynnistä ja päätä yleislämmittely sen omasta kortista.', 'Säädä lepoaika kellokuvakkeesta. Tehty sarja käynnistää ajastimen, kun automaattinen lepoajastin on käytössä.'],
  [('Yleislämmittely ja lämmittelysarjat', '<p>Yleislämmittely näkyy harjoituksen ensimmäisenä omana korttina. Sen valmistuminen vie varsinaisiin liikkeisiin. Liikekohtaiset lämmittelysarjat otetaan käyttöön erikseen.</p><p>Lämmittely ja työsarjat erotetaan toisistaan. Yleislämmittelyn kirjaus ei itsessään aiheuta Valmentajan progressio-, kevennys- tai liikkeenvaihtopäätöstä.</p>'),
   ('Lepoaika, pysäytys ja värinä', '<p>Kellokuvakkeesta avautuvat lepoajastimen ja lämmittelyn asetukset. Tarkista haluamasi lepoajan pituus ja automaattinen käynnistys. Käynnissä olevan levon jäljellä oleva aika näkyy treenin yläreunassa.</p><p>Voit päättää levon näkymän ohjaimesta. Värinän valitset lepoasetuksista ja kellon värinät erikseen Wear OS -asetuksista.</p>')])
 
-chapter('muokkaus', 'Sovita päivän treeni tilanteeseen',
+chapter('muokkaus', 'Treenin muokkaaminen',
  'Laite varattu, vähemmän aikaa tai tänään kevyempi päivä? Muutosten yhteydessä valitset, koskevatko ne tätä treeniä vai myös ohjelmaa.',
  'Liikekortin valikko · koko treenin <strong>⋮</strong>',
  ['Avaa liikkeen valikko vaihtaaksesi liikettä tai sarjatavoitteita.', 'Valitse vahvistuksessa muutoksen laajuus.', 'Tarkista päivitetty treeni ennen seuraavaa sarjaa.'],
@@ -65,7 +65,7 @@ chapter('muokkaus', 'Sovita päivän treeni tilanteeseen',
   ('Jatka kesken jäänyttä tai lopeta harjoitus', '<p>Palaa <strong>Treeni</strong>-välilehdelle ja jatka aktiivista harjoitusta. Sovellus ohjaa ratkaisemaan keskeneräisen harjoituksen ennen toisen aloittamista.</p><p>Valitse lopuksi <strong>⋮ → Lopeta treeni</strong>. Jos sarjoja puuttuu, voit jatkaa harjoitusta, tallentaa tehdyn osuuden valitsemalla <strong>Lopeta silti</strong> tai poistaa harjoituksen. Poistaminen hylkää sen merkinnät.</p><p>Yhteenvedosta näet keston, tehdyt sarjat, suoritusasteen ja lihaskuormituksen sekä saatavilla olevat terveystiedot. <strong>Avaa treenin tiedot</strong> näyttää liikkeet ja sarjat.</p>')],
  [('07-yhteenveto', 'Yhteenveto näyttää todellisen toteutuksen myös silloin, kun teit vain osan suunnitelmasta.')])
 
-chapter('muut-treenit', 'Tallenna myös lenkit ja muu liikunta',
+chapter('muut-treenit', 'Muu liikunta ja GPS',
  'Kävely, juoksu, pyöräily ja muut lajit kuuluvat samaan harjoitusarkeen. Voit tallentaa ajan ja halutessasi GPS-reitin.',
  '<strong>Treeni → Muut treenit</strong>',
  ['Valitse liikuntalaji. Valitse tuetussa lajissa, tallennetaanko reitti GPS:llä.', 'Aloita harjoitus. Salli tarvittavat sijainti- ja muut luvat, jos haluat mittaukset käyttöön.', 'Käytä Tauko- ja Jatka-painikkeita tarvittaessa. Lopeta harjoitus, tarkista yhteenveto ja lisää haluamasi tiedot.'],
@@ -75,7 +75,7 @@ chapter('muut-treenit', 'Tallenna myös lenkit ja muu liikunta',
   ('Syke, energia ja tiedot historiassa', '<p>Yhteensopiva Wear OS -kello voi tuottaa syke-, askel- ja energiadataa. Mittarit näkyvät vain, kun laite ja annetut luvat tarjoavat ne. Energiankulutus on arvio.</p><p>Valmis harjoitus löytyy Historiasta. Avaa se nähdäksesi keston, matkan, reitin ja saatavilla olevat mittaukset. Myös Health Connectista tuodut harjoitukset erotetaan niiden lähteen perusteella.</p>')],
  [('14-muut-treenit', 'Valitse laji ja päätä, tallennetaanko GPS-reitti.')])
 
-chapter('valmentaja', 'Valmentaja pitää kokonaisuuden mielessä',
+chapter('valmentaja', 'Valmentaja',
  'Valmentaja yhdistää kirjaamaasi harjoittelua, paikallista analyysiä ja tekoälyn arviota. Sinä valitset, kuinka aktiivisesti se osallistuu.',
  '<strong>Asetukset → Treenaaminen → Valmentaja</strong>',
  ['Ota Valmentaja käyttöön. Valitse Ehdota tai Automaattinen.', 'Säädä tarvittaessa progression, kevennysten, liikevaihtojen ja ohjelman hienosäädön toimintaa erikseen.', 'Lue ehdotuksen perustelu ennen hyväksymistä. Tarkista automaattisten muutosten yhteenveto.'],
@@ -88,7 +88,7 @@ chapter('valmentaja', 'Valmentaja pitää kokonaisuuden mielessä',
   ('Mitä arvio kertoo – ja mitä dataa tarvitaan?', '<p>Kirjaa toteutuneet sarjat, toistot, painot ja ajat oikein. Pidempi vertailukelpoinen historia auttaa erottamaan kehityssuunnan yksittäisestä poikkeamasta. Aloittelijasta tai tauolta palanneesta voi ensin kertyä lisää havaintoja.</p><p>Valmentaja ei näe tekniikkaasi eikä tunnista kipua tai vammaa. Uniyhteenveto on käytettävissä vain, jos olet ottanut tuonnin käyttöön ja dataa on saatavilla. Puuttuva tieto ei ole huono tulos.</p>')],
  [('12-valmentaja', 'Valitse toimintatapa ja säädä tarvittaessa toimintoja erikseen.')])
 
-chapter('kehonhuolto', 'Päätä treeni rauhassa',
+chapter('kehonhuolto', 'Kehonhuolto ja loppuvenyttely',
  'Loppuvenyttely täydentää tehtyä treeniä. Erillinen kehonhuolto sopii myös päivään, jolloin et tee voimaharjoitusta.',
  '<strong>Treenin ⋮ → Aloita loppuvenyttely</strong> · <strong>Kehonhuolto</strong>-välilehti',
  ['Loppuvenyttelyyn siirryt treenin valikosta. Kehonhuollossa valitse palauttava harjoitus tai liikkuvuus.', 'Valitse kehonhuollon painopiste ja sopiva kesto. Tarkista muodostettu liikesarja.', 'Käynnistä liikkeen ajastin ja etene kortista seuraavaan. Päätä harjoitus lopuksi valikosta.'],
@@ -98,7 +98,7 @@ chapter('kehonhuolto', 'Päätä treeni rauhassa',
   ('Valinnainen taustamusiikki', '<p>Musiikkisoitin näkyy venyttelyn ja kehonhuollon alareunassa, kun toiminto on käytössä. Käytä toisto-, tauko- ja kappaleenvaihtopainikkeita tai sulje soitin.</p><p>Asetus löytyy kohdasta <strong>Asetukset → Sovelluksen asetukset → Näyttö ja äänet → Venyttelyn ja kehonhuollon taustamusiikki</strong>.</p>')],
  [('10-kehonhuolto', 'Valitse harjoituksen tyyppi, painopiste ja kesto.'), ('06-loppuvenyttely', 'Loppuvenyttelyssä liikkeillä on ohjeet ja omat ajastimet.')])
 
-chapter('historia', 'Näe, mitä olet saanut aikaan',
+chapter('historia', 'Historia ja kehitys',
  'Historia kokoaa voimaharjoitukset, kehonhuollot ja muun liikunnan. Kehitystä kannattaa katsoa useamman harjoituksen kokonaisuutena.',
  '<strong>Historia → Yleiskatsaus</strong> tai <strong>Kehitys</strong>',
  ['Tarkista viikon aktiivisuus ja avaa haluamasi päivä kalenterista.', 'Avaa harjoitus nähdäksesi yhteenvedon, liikkeet ja sarjat.', 'Vaihda Kehitys-välilehteen, valitse ajanjakso ja tarkastele työmäärää tai voimatasoja.'],
@@ -108,7 +108,7 @@ chapter('historia', 'Näe, mitä olet saanut aikaan',
   ('Syke, energia ja muiden sovellusten harjoitukset', '<p>Syke ja energia -kooste näyttää saatavilla olevia kellosta tallennettuja tietoja valitulta ajalta. Avaa yksittäinen harjoitus nähdäksesi sen tarkemman sykekäyrän, jos näytteitä on.</p><p>Health Connect -tuonnit näkyvät Historiassa omalla lähteellään. Tuotu harjoitus kertoo muusta aktiivisuudesta, mutta se ei muutu GymTrackerin liike- ja sarjahistoriaksi.</p>')],
  [('08-historia', 'Yleiskatsaus kokoaa viikon ja viimeisimmän aktiivisuuden.'), ('09-kehitys', 'Kehitys-välilehdellä vaihdat ajanjaksoa ja vertaat kokonaisuuksia.')])
 
-chapter('wear-os', 'Treeni kulkee ranteessa',
+chapter('wear-os', 'Wear OS -kello',
  'Wear OS -kumppani vähentää tarvetta ottaa puhelin esiin jokaisen sarjan jälkeen. Laajemmat ohjelmamuutokset teet puhelimessa.',
  '<strong>Asetukset → Wear OS</strong>',
  ['Asenna GymTracker sekä Android-puhelimeen että yhteensopivaan Wear OS -kelloon ja pidä laitteet yhteydessä.', 'Ota kellotuki käyttöön puhelimen asetuksista. Anna kellossa tarvittavat liikunta- ja terveysluvat, jos haluat mittaukset.', 'Aloita tai jatka harjoitusta puhelimesta ja avaa GymTracker kellossa. Jos harjoitus ei näy, valitse Yritä uudelleen.'],
@@ -118,7 +118,7 @@ chapter('wear-os', 'Treeni kulkee ranteessa',
   ('Kellon ulkoasu, hereilläpito ja värinät', '<p>Puhelimen Wear OS -asetuksista säädät lepoajastimen näkyvyyttä, harjoitusnäkymän hereilläpitoa, lepo- ja aikasarjavärinöitä, tekstin kokoa ja käyttöliittymän kokoa.</p><p>Hereilläpito voi lisätä virrankulutusta. Jos näyttö himmenee, nosta rannetta tai napauta näyttöä. Kellotaululta pääset takaisin avaamalla GymTrackerin.</p>')],
  [('16-wear-asetukset', 'Kellon näkymää ja värinöitä säädetään puhelimen Wear OS -asetuksista.')])
 
-chapter('health-connect', 'Yhdistä liikunnan ja unen tiedot',
+chapter('health-connect', 'Health Connect',
  'Health Connect tuo muiden sovellusten harjoituksia ja unitietoja GymTrackeriin sekä välittää valmistuneita harjoituksia muihin sovelluksiin.',
  '<strong>Asetukset → Sovelluksen asetukset → Health Connect</strong>',
  ['Tarkista, että Health Connect on saatavilla laitteessasi.', 'Ota vienti ja tuonti käyttöön erikseen. Myönnä haluamiesi tietojen kirjoitus- tai lukuluvat.', 'Käytä Tuo nyt -painiketta tuonnin päivittämiseen. Valmiin treenin yhteenvedosta voit tarkistaa viennin tilan tai yrittää vientiä uudelleen.'],
@@ -127,7 +127,7 @@ chapter('health-connect', 'Yhdistä liikunnan ja unen tiedot',
   ('Luvat, reitit ja ongelmatilanteet', '<p>Vienti- ja tuontiluvat ovat erilliset. Hallitse ja peru niitä Androidin Health Connect -asetuksissa. GPS-tallennus ei yksin anna muille sovelluksille oikeutta reittiin.</p><p>Jos tietoja puuttuu, tarkista Health Connectin luvat, GymTrackerin kytkimet ja lähdesovelluksen tallennukset. Reitti voi vaatia erillisen luvan tai hyväksynnän. Vain valmistunut harjoitus voidaan viedä.</p>')],
  [('17-health-connect', 'Ota tietojen vienti ja tuonti käyttöön omilla valinnoillaan.')])
 
-chapter('asetukset', 'Tee sovelluksesta omasi',
+chapter('asetukset', 'Asetukset',
  'Muutama harkittu asetus riittää. Voit säätää harjoittelun perustietoja, näkymää ja muistutuksia myöhemminkin.',
  '<strong>⋮ → Asetukset</strong>',
  [],
@@ -136,7 +136,7 @@ chapter('asetukset', 'Tee sovelluksesta omasi',
   ('Treenirytmimuistutukset ja taukoviestit', '<p>Avaa <strong>Sovelluksen asetukset → Muistutukset</strong>. Voit sallia treenirytmiin perustuvat muistutukset ja pidempään taukoon liittyvät viestit erikseen. Valitse myös muistutusten kellonaika.</p><p>Muistutus tarvitsee Androidin ilmoitusluvan. Jos muistutukset on hiljennetty, asetuksissa näkyy mahdollisuus poistaa hiljennys. Kaikki päivät eivät tuota ilmoitusta: muistutus lähetetään, kun sille löytyy syy.</p>'),
   ('Käyttöanalytiikka, tiedot ja yhteystiedot', '<p><strong>Sovelluksen asetukset → Käyttöanalytiikka</strong> antaa valita perustason käyttötietojen jakamisen. Analytiikkavalinta on erillinen Valmentajan tekoälyarviosta ja Health Connectin oikeuksista.</p><p><strong>⋮ → Tietoja sovelluksesta</strong> näyttää version, kehittäjän, yhteystiedot, verkkosivun ja tietosuojalinkit. Sieltä pääset myös Google Playn sovellussivulle. Turvallisuusohjeet löytyvät Asetuksista.</p>')])
 
-chapter('varmuuskopiointi', 'Pidä treenihistoriasi tallessa',
+chapter('varmuuskopiointi', 'Varmuuskopiointi',
  'Varmuuskopio auttaa puhelimen vaihtuessa ja vahinkojen varalta. Tallenna kopio paikkaan, johon pääset myös toiselta laitteelta.',
  '<strong>Asetukset → Sovelluksen asetukset → Varmuuskopiointi</strong>',
  ['Valitse Vie varmuuskopio ja tallennuspaikka Androidin tiedostovalitsimessa.', 'Tarkista, että sovellus vahvistaa tiedoston tallentumisen.', 'Uudella laitteella valitse Tuo varmuuskopio ja avaa tallennettu GymTracker-tiedosto. Lue palautuksen vahvistus.'],
@@ -145,7 +145,7 @@ chapter('varmuuskopiointi', 'Pidä treenihistoriasi tallessa',
   ('Puhelimen vaihto ja tietojen yksityisyys', '<p>Harjoitusdata tallennetaan ensisijaisesti laitteelle. Omat varmuuskopiot menevät valitsemaasi paikkaan. Tekoälyarvioita varten tarvittavia yhteenvetoja käsitellään palvelinyhteyden kautta, ja Health Connect -siirrot noudattavat omia lupiaan.</p><p>Varmuuskopio voi sisältää henkilökohtaisia harjoitustietoja: säilytä se omassa luotetussa tallennustilassasi. Palauta tilaus erikseen Google Playn ostojen palautuksella.</p><p>Aiemman asennuksen maksuton erityisoikeus ei välttämättä siirry uuteen asennukseen tai uuteen puhelimeen. Tarkista oma tilausnäkymä ennen sovelluksen poistamista tai tietojen tyhjentämistä.</p>')],
  [('18-varmuuskopiointi', 'Valitse automaattiselle kopiolle tiedosto ja tarkista viimeisin onnistunut tallennus.')])
 
-chapter('pulmat', 'Kun jokin ei mene suunnitellusti',
+chapter('pulmat', 'Ongelmatilanteet',
  'Aloita näistä nopeista tarkistuksista. Oman versionumeron löydät kohdasta ⋮ → Tietoja sovelluksesta.',
  '', [],
  [('En löydä toimintoa tai näkymä näyttää erilaiselta', '<p>Avaa oikean näkymän <strong>⋮</strong>-valikko: sen toiminnot vaihtuvat tilanteen mukaan. Tarkista käyttöoikeus, sovellusversio ja tarvittavat laiteluvat. Kaikilla laitteilla ei ole samoja mittareita.</p><p>Tämä ohje kuvaa version 2.3.1.5 näkymiä ja niitä vastaavaa toteutusta. Käyttöliittymä ja käyttöoikeuksien nimet voivat muuttua päivityksissä.</p>'),
@@ -156,14 +156,21 @@ chapter('pulmat', 'Kun jokin ei mene suunnitellusti',
   ('Tarvitsen apua tai haluan ilmoittaa virheestä', '<p>Lähetä kuvaus osoitteeseen <a href="mailto:gymtracker@donturexdev.fi">gymtracker@donturexdev.fi</a>. Kerro puhelin- ja kellomalli, Android-/Wear OS -versio, GymTracker-versio ja lyhyet toistovaiheet.</p><p>Kerro, mitä odotit ja mitä tapahtui. Kuvankaappaus auttaa; tarkista ennen lähettämistä, ettei siinä näy henkilökohtaisia tietoja, joita et halua jakaa.</p>')])
 
 def shot_html(name, caption):
-    return f'''<figure class="shot"><button type="button" class="shot-button" aria-label="Suurenna kuva: {escape(caption, quote=True)}"><span class="phone"><img src="assets/{name}.webp" width="720" height="1616" loading="lazy" decoding="async" alt="{escape(caption, quote=True)}"></span></button><figcaption>{escape(caption)} <span>Napauta suuremmaksi.</span></figcaption></figure>'''
+    return f'''<figure class="shot"><button type="button" class="shot-button" aria-label="Suurenna kuva: {escape(caption, quote=True)}"><span class="phone"><img src="assets/{name}.webp" width="720" height="1616" loading="lazy" decoding="async" alt="{escape(caption, quote=True)}"></span></button><figcaption><span class="caption-text">{escape(caption)}</span> <span class="zoom-hint">Napauta suuremmaksi.</span></figcaption></figure>'''
 
-nav = ''.join(f'<a href="#{c["slug"]}"><span>{i:02}</span> {escape(c["title"])}</a>' for i,c in enumerate(chapters,1))
+nav = ''.join(f'<a data-chapter-link href="#{c["slug"]}"><span>{i:02}</span> {escape(c["title"])}</a>' for i,c in enumerate(chapters,1))
+context_shots = {'treeni-2': '04-painon-syotto', 'kehonhuolto-1': '06-loppuvenyttely', 'historia-2': '09-kehitys'}
 sections = []
 for i, c in enumerate(chapters,1):
     steps = '<ol class="steps">' + ''.join(f'<li>{s}</li>' for s in c['steps']) + '</ol>' if c['steps'] else ''
-    features = ''.join(f'<details class="feature" id="{c["slug"]}-{j}"><summary>{title}</summary><div class="feature-body">{body}</div></details>' for j,(title,body) in enumerate(c['features'],1))
-    shots = '<div class="screenshots">' + ''.join(shot_html(*s) for s in c['shots']) + '</div>' if c['shots'] else ''
+    features = []
+    for j, (title, body) in enumerate(c['features'], 1):
+        feature_id = f'{c["slug"]}-{j}'
+        related = ''.join(shot_html(*s) for s in c['shots'] if s[0] == context_shots.get(feature_id))
+        features.append(f'<details class="feature" id="{feature_id}"><summary>{title}</summary><div class="feature-body">{body}{related}</div></details>')
+    features = ''.join(features)
+    primary = [s for s in c['shots'] if s[0] not in context_shots.values()]
+    shots = '<div class="screenshots">' + ''.join(shot_html(*s) for s in primary) + '</div>' if primary else ''
     path = f'<p class="path">{c["path"]}</p>' if c['path'] else ''
     grid = 'chapter-grid' if c['shots'] else 'chapter-content'
     sections.append(f'''<section class="chapter" id="{c['slug']}" aria-labelledby="heading-{c['slug']}"><div class="chapter-head"><span class="chapter-number">{i:02}</span><h2 id="heading-{c['slug']}">{c['title']}</h2></div><p class="chapter-intro">{c['intro']}</p><div class="{grid}"><div class="chapter-content">{path}{steps}{features}</div>{shots}</div></section>''')
@@ -171,15 +178,16 @@ for i, c in enumerate(chapters,1):
 html = f'''<!doctype html>
 <html lang="fi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101114"><title>GymTracker – Kuvallinen käyttöohje</title><meta name="description" content="GymTrackerin suomenkielinen kuvallinen käyttöohje: ohjelmat, treenikirjaukset, Valmentaja, GPS, kehonhuolto, historia, Wear OS, Health Connect ja varmuuskopiot."><link rel="canonical" href="https://donturexdev.fi/gymtracker/ohje/"><link rel="icon" href="assets/icon.webp" type="image/webp"><link rel="stylesheet" href="styles.css"><script src="guide.js" defer></script></head>
 <body><a class="skip" href="#sisalto">Siirry ohjeeseen</a>
-<header class="topbar"><div class="topbar-inner"><a class="brand" href="../" aria-label="GymTrackerin kotisivu"><img src="assets/icon.webp" width="36" height="36" alt=""><span>Gym<em>Tracker</em></span></a><div class="top-links"><a class="home-link" href="../">Sovelluksen kotisivu ↗</a><a href="#aloittaminen">Käyttöohje</a><button type="button" class="outline-button print-button js-only" hidden>Tulosta / PDF</button></div></div></header>
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="../" aria-label="GymTrackerin kotisivu"><img src="assets/icon.webp" width="36" height="36" alt=""><span>Gym<em>Tracker</em></span></a><div class="top-links"><a class="home-link" href="../">Sovelluksen kotisivu ↗</a><a class="desktop-link" data-guide-link href="#aloittaminen">Käyttöohje</a><button type="button" id="open-topics" class="outline-button mobile-tool js-only" aria-haspopup="dialog" aria-controls="mobile-tools" aria-expanded="false" hidden>Aiheet</button><button type="button" id="open-search" class="outline-button mobile-tool js-only" aria-haspopup="dialog" aria-controls="mobile-tools" aria-expanded="false" hidden>Haku</button><button type="button" class="outline-button print-button js-only" hidden>Tulosta / PDF</button></div></div></header>
 <div class="page"><aside class="sidebar" aria-label="Käyttöohjeen sisällysluettelo"><p class="nav-label">Löydä oma kohtasi</p><nav>{nav}</nav><p class="nav-note">Aitoja näkymiä. Selkeitä askelia.<br>Ohje suomeksi · 28.10.2026</p></aside>
-<main id="sisalto"><details class="mobile-nav"><summary>Sisällysluettelo — valitse aihe</summary><nav aria-label="Mobiilin sisällysluettelo">{nav}</nav></details>
-<section class="hero" aria-labelledby="guide-title"><div><span class="pill">GYMTRACKERIN KUVALLINEN KÄYTTÖOHJE</span><h1 id="guide-title">Vähemmän säätöä.<br><em>Enemmän treeniä.</em></h1><p class="lead">Suunnittele, kirjaa ja seuraa kehitystä. Täältä löydät arjen perustoiminnot ja tarkemmat ohjeet silloin, kun niitä tarvitset.</p><div class="search-box js-only" hidden><label for="guide-search">Mihin tarvitset apua?</label><input id="guide-search" type="search" autocomplete="off" placeholder="Hae: paino, GPS, kello, varmuuskopio…" aria-describedby="search-status"><button type="button" id="clear-search" aria-label="Tyhjennä haku" hidden>×</button><p id="search-status" role="status" aria-live="polite"></p></div><p class="meta">Päivitetty 28.10.2026 · Kuvat versiosta 2.3.1.5<br>Kuvat on otettu Android-testiemulaattorista. Näkyvät treenit ovat esimerkkidataa.</p></div><div class="hero-phone phone"><img src="assets/01-treeni.webp" width="720" height="1616" fetchpriority="high" alt="GymTrackerin Treeni-välilehti: seuraava treeni ja harjoitusohjelman päivät."></div></section>
+<main id="sisalto"><details class="mobile-nav fallback-nav"><summary>Sisällysluettelo — valitse aihe</summary><nav aria-label="Mobiilin sisällysluettelo">{nav}</nav></details>
+<section class="hero" aria-labelledby="guide-title"><div><h1 id="guide-title">GymTrackerin käyttöohje</h1><p class="hero-tagline">Vähemmän säätöä. <em>Enemmän treeniä.</em></p><p class="hero-description">Suunnittele, kirjaa ja seuraa kehitystä. Täältä löydät arjen perustoiminnot ja tarkemmat ohjeet silloin, kun niitä tarvitset.</p><div class="search-box js-only" hidden><label for="guide-search">Mihin tarvitset apua?</label><div class="search-field"><input id="guide-search" data-guide-search type="search" autocomplete="off" placeholder="Hae: paino, GPS, kello, varmuuskopio…" aria-describedby="search-status" aria-controls="search-results"><button type="button" id="clear-search" data-clear-search aria-label="Tyhjennä haku" hidden>×</button></div><p id="search-status" class="search-status" role="status" aria-live="polite"></p></div><p class="meta">Päivitetty 28.10.2026 · Kuvat versiosta 2.3.1.5<br>Kuvat on otettu Android-testiemulaattorista. Näkyvät treenit ovat esimerkkidataa.</p></div><div class="hero-phone phone"><img src="assets/01-treeni.webp" width="720" height="1616" fetchpriority="high" alt="GymTrackerin Treeni-välilehti: seuraava treeni ja harjoitusohjelman päivät."></div></section>
+<section id="search-results" class="search-results" aria-label="Hakutulokset" data-search-results hidden></section>
 <noscript><p class="no-js">Voit lukea koko ohjeen ja avata ohjekohdat ilman JavaScriptiä. Haku, kuvien suurennus ja tulostuspainike tarvitsevat JavaScriptin. Avaa kuva selaimen omasta kuvavalikosta.</p></noscript>
-<section class="quickstart" id="quickstart" aria-labelledby="quick-title"><h2 id="quick-title">Ensimmäinen treeni kolmella askeleella</h2><div class="quicksteps"><div><span class="step-number">01</span><strong>Valitse treenipäivä</strong><p>Avaa Treeni ja paina <b>Aloita treeni</b>. Tarkista päivän liikkeet.</p></div><div><span class="step-number">02</span><strong>Kirjaa tekemäsi sarjat</strong><p>Napauta sarjaa, tarkista toistot ja paino. Lepoajastin pitää rytmin.</p></div><div><span class="step-number">03</span><strong>Päätä ja seuraa kehitystä</strong><p>Valitse valikosta <b>Lopeta treeni</b>. Tallennettu harjoitus löytyy Historiasta.</p></div></div><p class="small">Avaa alla oleva ohjekohta napauttamalla sen otsikkoa. Kuvan saat suuremmaksi napauttamalla.</p></section>
+<section class="quickstart" id="quickstart" aria-labelledby="quick-title"><h2 id="quick-title">Ensimmäinen treeni kolmella askeleella</h2><div class="quicksteps"><a data-guide-link href="#treeni"><span class="step-number">01</span><strong>Valitse treenipäivä ↗</strong><p>Avaa Treeni ja paina <b>Aloita treeni</b>. Tarkista päivän liikkeet.</p></a><a data-guide-link href="#treeni-1"><span class="step-number">02</span><strong>Kirjaa tekemäsi sarjat ↗</strong><p>Napauta sarjaa, tarkista toistot ja paino. Lepoajastin pitää rytmin.</p></a><a data-guide-link href="#muokkaus-5"><span class="step-number">03</span><strong>Päätä ja seuraa kehitystä ↗</strong><p>Valitse valikosta <b>Lopeta treeni</b>. Tallennettu harjoitus löytyy Historiasta.</p></a></div><p class="small">Avaa tarkempi ohje plusmerkillisestä rivistä. Suurenna kuva napauttamalla.</p></section>
 <div id="no-results" class="no-results" hidden><p><strong>Ohjekohtaa ei löytynyt.</strong> Kokeile lyhyempää sanaa, kuten ”sarja”, ”kello” tai ”uni”.</p></div>
 {''.join(sections)}
 <footer class="page-footer"><p><strong>GymTracker · Donturex Development</strong></p><p>Selkeä treeniarki, omassa tahdissa.</p><div class="footer-links"><a href="../">GymTrackerin kotisivu</a><a href="https://play.google.com/store/apps/details?id=fi.donturexdev.gymtracker">Google Play</a><a href="../privacy/GymTracker_Privacy_Policy_EN.txt">Tietosuojakäytäntö</a><a href="mailto:gymtracker@donturexdev.fi">Ota yhteyttä</a><a href="#guide-title">Takaisin alkuun ↑</a></div><p>Ohjeen näkymät ja ominaisuudet voivat vaihdella sovellusversion, käyttöoikeuden, laitteen ja annettujen lupien mukaan.</p><p>© 2026 Donturex Development. Sovelluksen kuvat ja kuvankaappaukset: GymTracker.</p></footer>
-</main></div><dialog id="image-dialog" aria-labelledby="dialog-caption"><div class="lightbox-top"><p id="dialog-caption"></p><button type="button" id="close-dialog" autofocus>Sulje ×</button></div><img id="dialog-image" alt=""></dialog></body></html>'''
+</main></div><dialog id="mobile-tools" aria-labelledby="tools-title"><div class="tools-top"><h2 id="tools-title">Aiheet ja haku</h2><button type="button" id="close-tools" class="outline-button">Sulje ×</button></div><div class="search-box"><label for="mobile-search">Hae ohjeesta</label><div class="search-field"><input id="mobile-search" data-guide-search type="search" autocomplete="off" placeholder="Hae: paino, GPS, kello…" aria-describedby="mobile-search-status" aria-controls="mobile-search-results"><button type="button" data-clear-search aria-label="Tyhjennä haku" hidden>×</button></div><p id="mobile-search-status" class="search-status" role="status" aria-live="polite"></p></div><div id="mobile-search-results" class="search-results" data-search-results hidden></div><nav class="tools-nav" aria-label="Aiheet">{nav}</nav></dialog><dialog id="image-dialog" aria-labelledby="dialog-caption"><div class="lightbox-top"><p id="dialog-caption"></p><button type="button" id="close-dialog" autofocus>Sulje ×</button></div><img id="dialog-image" alt=""></dialog></body></html>'''
 ROOT.joinpath('index.html').write_text(html, encoding='utf-8')
 print(f'Generated {len(chapters)} chapters and {sum(len(c["features"]) for c in chapters)} help topics.')

@@ -16,8 +16,8 @@ kehityksen, Wear OS:n, Health Connectin, asetukset, käyttöoikeudet ja varmuusk
 - `assets/`: 16 oikeaa kuvankaappausta WebP-muodossa sekä sovelluksen kuvake.
 - `generate.py`: sisällön ylläpitolähde. Muokkaa sisältöä täällä ja suorita `python generate.py` päivittääksesi HTML:n.
 
-Julkaisu ei tarvitse Pythonia, palvelinta, ulkoisia fontteja, analytiikkaa,
-evästeitä tai kolmannen osapuolen JavaScript-kirjastoja. Hakusanat käsitellään selaimessa.
+Sivu toimii staattisena ilman Pythonia. GoatCounter laskee sivukäynnit.
+Ohjeen hakusanat käsitellään selaimessa.
 Kuvat avautuvat natiivissa dialogissa; Escape sulkee suurennuksen.
 Tulostus avaa ohjekohdat automaattisesti ja palauttaa niiden tilan tulostuksen jälkeen.
 
